@@ -10,12 +10,11 @@ files, although those could be dynamic endpoints if wanted.
 To run a demo:
 
   - clone this repo.
-  - get facebooks jsx tools: `npm install -g react-tools`
-  - transform the source JS: `jsx src/ js/ -x jsx`
-  - run a webserver in the root of the repository (or have the repository
-    cloned somewhere web-accessible)
-  - navigate to `index.html`
+  - run `npm install` to fetch dependencies
+  - run `./build.sh` to build the javascript into a bundle.
+  - run `npm start` to start the server
+  - browse to `http://localhost:8000/`
 
-The demo board should appear based on `board.json` in the root.
+The demo board should appear based on `www/board.json`.
 
-Check out `board.json` and the data in `json/` for more.
+Check out `board.json` and the data in `www/json/` for more.
