@@ -1,0 +1,27 @@
+{
+  "name": "walkerboard",
+  "version": "0.1.0",
+  "description": "Like Geckoboard, but with less features",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thechriswalker/walkerboard.git"
+  },
+  "keywords": [
+    "dashboard"
+  ],
+  "author": "Chris Walker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thechriswalker/walkerboard/issues"
+  },
+  "homepage": "https://github.com/thechriswalker/walkerboard",
+  "dependencies": {
+    "express":"4.0.x",
+    "react-tools":"0.10.x"
+  }
+}
