@@ -1,7 +1,7 @@
 #/bin/sh
 
 # add node modules to path.
-export PATH=./monde_modules/bin:$PATH
+export PATH=./node_modules/bin:$PATH
 
 # remove existing
 rm www/build/walkerboard.*
