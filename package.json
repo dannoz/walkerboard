@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/thechriswalker/walkerboard",
   "dependencies": {
+    §"uglify-js": "2.4.x",
     "express":"4.0.x",
     "react-tools":"0.10.x"
   }
