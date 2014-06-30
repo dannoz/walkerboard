@@ -11,7 +11,7 @@ To run a demo:
 
   - clone this repo.
   - run `npm install` to fetch dependencies
-  - run `./build.sh` to build the javascript into a bundle.
+  - run `npm run build` to build the javascript into a bundle.
   - run `npm start` to start the server
   - browse to `http://localhost:8000/`
 

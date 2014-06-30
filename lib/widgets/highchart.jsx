@@ -1,4 +1,7 @@
 /** @jsx React.DOM */
+/* jshint quotmark: false */
+var React = require("react"),
+    WidgetRegistry = require("lib/widget_registry");
 /**
  * The Highcharts widget.
  */
@@ -15,6 +18,6 @@ WidgetRegistry.add("highchart", React.createClass({
         'data.xAxis = data.xAxis||{}; data.xAxis.labels = data.xAxis.labels||{}; data.xAxis.labels.staggerLines = 1;',
         'var chart = new Highcharts.Chart(data);',
         '</', 'script></body></html>'].join("");
-    return <iframe srcDoc={doc} seamless="seamless" sandbox="allow-scripts" />;
+    return <iframe srcDoc={doc} seamless="seamless" frameBorder="0" sandbox="allow-scripts" />;
   }
 }));

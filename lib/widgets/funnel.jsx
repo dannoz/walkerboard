@@ -1,4 +1,6 @@
 /** @jsx React.DOM */
+var React = require("react"),
+    WidgetRegistry = require("lib/widget_registry");
 /**
  * Funnel widget
  */

@@ -1,8 +1,10 @@
 /** @jsx React.DOM */
+var React = require("react");
 /**
  * The Little Refresh button...
  */
-var RefreshButton = React.createClass({
+module.exports = React.createClass({
+  displayName: "RefreshButton",
   render: function(){
     var divAttrs = {
       className: "refresh refresh-loading",

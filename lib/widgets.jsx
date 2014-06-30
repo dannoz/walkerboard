@@ -1,9 +1,13 @@
 /** @jsx React.DOM */
+var React = require("react"),
+    WidgetRegistry = require("lib/widget_registry"),
+    ErrorMsg = require("lib/error_msg");
 /**
  * the Widget React Component, is more of a "Maybe", in case the
  * type doesn't exist
  */
-var Widget = React.createClass({
+module.exports = React.createClass({
+  displayName: "Widget",
   render: function(){
     //check for widget existence and render or error
     var widget = WidgetRegistry.get(this.props.which);

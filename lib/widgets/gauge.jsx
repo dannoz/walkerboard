@@ -1,4 +1,7 @@
 /** @jsx React.DOM */
+var React = require("react"),
+    ErrorMsg = require("lib/error_msg"),
+    WidgetRegistry = require("lib/widget_registry");
 /**
  * The Gauge widget.
  * Interesting use of state and props as the render creates dom, but never
@@ -7,7 +10,7 @@
 WidgetRegistry.add("gauge", React.createClass({
   displayName: "Gauge",
   componentDidMount: function() {
-    var canvas = this.refs["arc"].getDOMNode();
+    var canvas = this.refs.arc.getDOMNode();
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
     this.paint(canvas);
@@ -33,17 +36,17 @@ WidgetRegistry.add("gauge", React.createClass({
         endAngle = 1.8 * Math.PI,
         counterClockwise = false,
         endPercent = (0.6 * Math.PI * p) + startAngle,
-        color = p < 0.5 ? 'red' : 'green';
+        color = p < 0.5 ? "red" : "green";
 
       ctx.beginPath();
       ctx.arc(x, y, radius, startAngle, endAngle, counterClockwise);
       ctx.lineWidth = thick;
-      ctx.strokeStyle = 'black';
+      ctx.strokeStyle = "black";
       ctx.stroke();
 
       ctx.beginPath();
       ctx.arc(x, y, radius, startAngle, endPercent, counterClockwise);
-      ctx.lineWidth = thick
+      ctx.lineWidth = thick;
       ctx.strokeStyle = color;
       ctx.stroke();
     });
@@ -53,7 +56,7 @@ WidgetRegistry.add("gauge", React.createClass({
     try{
       var jsdata = JSON.parse(this.props.data);
       if(! ("value" in jsdata)){
-         return cb(<ErrorMsg msg="No Value in Data"/>);
+        return cb(<ErrorMsg msg="No Value in Data"/>);
       }
       value = jsdata.value;
 
@@ -83,7 +86,7 @@ WidgetRegistry.add("gauge", React.createClass({
       label = l;
       style = (v-mn)/(mx-mn) < 0.5 ? "low" : "high";
     });
-    if(error != null){
+    if(error !== null){
       return error;
     }
     return <div className="gauge-wrap">

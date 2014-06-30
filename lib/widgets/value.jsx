@@ -1,4 +1,6 @@
 /** @jsx React.DOM */
+var React = require("react"),
+    WidgetRegistry = require("lib/widget_registry");
 /**
  * ValueAndSecondary widget.
  */
@@ -38,8 +40,8 @@ WidgetRegistry.add("value", React.createClass({
   },
   formatNumber: function(num){
     var sizes = ["","K","M"];
-    if (num === 0) return '0';
+    if (num === 0) { return "0"; }
     var i = parseInt(Math.floor(Math.log(num) / Math.log(1000)));
     return this.trimRightZeroes((num / Math.pow(1000, i)).toPrecision(4)) + sizes[i];
   }
- }));
+}));
