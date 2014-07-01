@@ -18,7 +18,9 @@ WidgetRegistry.add("value", React.createClass({
     }
     try {
       sub = (100 * main / jsdata.item[1].value);
-    }catch(e){}
+    }catch(e){
+      sub = false;
+    }
     return (
       <div>
         <h1 className="main">{this.formatNumber(main)}</h1>
@@ -39,6 +41,13 @@ WidgetRegistry.add("value", React.createClass({
     return s;
   },
   formatNumber: function(num){
+    if(typeof(num) === "string"){
+      try {
+        num = parseInt(num, 10);
+      }catch(e){
+        num = 0;
+      }
+    }
     var sizes = ["","K","M"];
     if (num === 0) { return "0"; }
     var i = parseInt(Math.floor(Math.log(num) / Math.log(1000)));
