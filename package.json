@@ -28,6 +28,8 @@
     "uglifyify": "^2.4.0",
     "reactify": "^0.13.1",
     "browserify": "^4.2.0",
-    "node-jsx": "^0.10.0"
+    "node-jsx": "^0.10.0",
+    "lodash": "^2.4.1",
+    "chartjs": "https://github.com/nnnick/Chart.js/archive/v1.0.1-beta.2.tar.gz"
   }
 }

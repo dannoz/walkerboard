@@ -1,5 +1,6 @@
 /** @jsx React.DOM */
 var React = require("react"),
+    ErrorMsg = require("lib/error_msg"),
     WidgetRegistry = require("lib/widget_registry");
 /**
  * Funnel widget
@@ -17,10 +18,10 @@ WidgetRegistry.add("funnel", React.createClass({
         items = o.item;
       }
       if(!items.length){
-        return <Error msg="Invalid Data (No Items)"/>;
+        return <ErrorMsg msg="Invalid Data (No Items)"/>;
       }
     }catch(e){
-      return <Error msg="Invalid Data"/>;
+      return <ErrorMsg msg="Invalid Data"/>;
     }
     var baseValue = reverse ? items[0].value : items[items.length-1].value;
     var colors = reverse ? this.colors.reverse() : this.colors;

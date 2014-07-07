@@ -22,6 +22,7 @@
 }
 .panel-body {
   padding: 0;
+  position: relative;
 }
 
 .panel-y-1 { top: 320px; }
@@ -159,13 +160,13 @@
 .panel-h-3 .gauge-label { font-size: 12em; }
 .panel-h-4 .gauge-label { font-size: 16em; }
 
-.gauge-canvas { height: 250px; width: 290px; }
-.panel-h-2 .gauge-canvas { height: 570px; }
-.panel-h-3 .gauge-canvas { height: 890px; }
-.panel-h-4 .gauge-canvas { height: 1210px; }
-.panel-w-2 .gauge-canvas { width: 610px; }
-.panel-w-3 .gauge-canvas { width: 930px; }
-.panel-w-4 .gauge-canvas { width: 1250px; }
+.widget-canvas { height: 250px; width: 290px; position: relative; left: 5px; top: 5px; }
+.panel-h-2 .widget-canvas { height: 570px; }
+.panel-h-3 .widget-canvas { height: 890px; }
+.panel-h-4 .widget-canvas { height: 1210px; }
+.panel-w-2 .widget-canvas { width: 610px; }
+.panel-w-3 .widget-canvas { width: 930px; }
+.panel-w-4 .widget-canvas { width: 1250px; }
 /*
 .gauge-low {
   color: red;

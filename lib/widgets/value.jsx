@@ -1,5 +1,6 @@
 /** @jsx React.DOM */
 var React = require("react"),
+    ErrorMsg = require("lib/error_msg"),
     WidgetRegistry = require("lib/widget_registry");
 /**
  * ValueAndSecondary widget.
@@ -14,7 +15,7 @@ WidgetRegistry.add("value", React.createClass({
     }catch(e){
       console.error(e);
       console.log(this.props);
-      return <Error msg="Invalid Data"/>;
+      return <ErrorMsg msg="Invalid Data"/>;
     }
     try {
       sub = (100 * main / jsdata.item[1].value);

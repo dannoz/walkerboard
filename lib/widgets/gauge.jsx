@@ -90,7 +90,7 @@ WidgetRegistry.add("gauge", React.createClass({
       return error;
     }
     return <div className="gauge-wrap">
-      <canvas className="gauge-canvas" ref="arc"></canvas>
+      <canvas className="widget-canvas" ref="arc"></canvas>
       <h1 className={"gauge-label gauge-"+style}>{label}</h1>
     </div>;
   }
