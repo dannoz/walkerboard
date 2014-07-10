@@ -53,7 +53,7 @@ WidgetRegistry.add("chartjs", React.createClass({
         return _.extend({}, colors[idx % colors.length], set);
       });
     }
-    this.chart = new ChartJS(ctx)[data.type](data.data, data.options||{});
+    this.chart = new ChartJS(ctx)[data.type](data.data, _.extend({}, options, data.options||{}));
 
   },
   componentDidMount: function(){
@@ -70,6 +70,9 @@ WidgetRegistry.add("chartjs", React.createClass({
   }
 }));
 
+var options = {
+  multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>"
+};
 
 var colors = [
   { fillColor: "rgba(220,220,220,0.2)",

@@ -1,16 +1,1 @@
-{
-  "type":"Line",
-  "data":{
-    "labels": ["January", "February", "March", "April", "May", "June", "July"],
-    "datasets": [
-        {
-            "label": "My First dataset",
-            "data": [65, 59, 80, 81, 56, 55, 40]
-        },
-        {
-            "label": "My Second dataset",
-            "data": [28, 48, 40, 19, 86, 27, 90]
-        }
-    ]
-  }
-}
+{"type":"Line","data":{"labels":["2014-07-04","2014-07-05","2014-07-06","2014-07-07","2014-07-08","2014-07-09","2014-07-10"],"datasets":[{"label":"post:create","data":[0,0,0,0,7,0,0]},{"label":"post:reply","data":[0,0,0,9,0,4,0]},{"label":"post:comment","data":[0,0,0,0,0,0,0]}]}}

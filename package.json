@@ -30,6 +30,6 @@
     "browserify": "^4.2.0",
     "node-jsx": "^0.10.0",
     "lodash": "^2.4.1",
-    "chartjs": "https://github.com/nnnick/Chart.js/archive/v1.0.1-beta.2.tar.gz"
+    "Chart.js": "^1.0.1-beta.2"
   }
 }
