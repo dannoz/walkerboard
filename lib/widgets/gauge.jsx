@@ -22,14 +22,14 @@ WidgetRegistry.add("gauge", React.createClass({
   },
   paint: function(canvas){
     this.getData(function(err, label, min, max, value){
-      if(err != null){
+      if(err !== null){
         //balls, how to handle this? it really shouldn't happen.
         return;
       }
       var ctx = canvas.getContext("2d"),
         x = canvas.width / 2,
         y = canvas.height * 0.8,
-        p = (value-min) / (max-min),
+        p = (max-min === 0) ? 100 : (value-min) / (max-min),
         thick = canvas.height/4,
         radius = Math.min(canvas.width, canvas.height)*0.49,
         startAngle = 1.2 * Math.PI,
@@ -80,11 +80,13 @@ WidgetRegistry.add("gauge", React.createClass({
     return cb(null, label, min, max, value);
   },
   render: function(){
-    var error, label="", style = "normal";
+    var min = 0, max = 0, error, label="", style = "normal";
     this.getData(function(err, l, mn, mx, v){
       error = err;
       label = l;
       style = (v-mn)/(mx-mn) < 0.5 ? "low" : "high";
+      min = mn;
+      max = mx;
     });
     if(error !== null){
       return error;
@@ -92,6 +94,14 @@ WidgetRegistry.add("gauge", React.createClass({
     return <div className="gauge-wrap">
       <canvas className="widget-canvas" ref="arc"></canvas>
       <h1 className={"gauge-label gauge-"+style}>{label}</h1>
+      <div className="gauge-min">
+        <span className="gauge-mm-label">min</span>
+        <span className="gauge-mm-value">{min}</span>
+      </div>
+      <div className="gauge-max">
+        <span className="gauge-mm-label">max</span>
+        <span className="gauge-mm-value">{max}</span>
+      </div>
     </div>;
   }
 }));

@@ -160,6 +160,20 @@
 .panel-h-3 .gauge-label { font-size: 12em; }
 .panel-h-4 .gauge-label { font-size: 16em; }
 
+.gauge-max, .gauge-min {
+  position:absolute;
+  top: 50%;
+  text-align:center;
+}
+.gauge-min { left: 5px; }
+.gauge-max { right: 5px; }
+.gauge-mm-label {
+  display: block;
+}
+.gauge-mm-value {
+  color: #fff;
+}
+
 .widget-canvas { height: 250px; width: 290px; position: relative; left: 5px; top: 5px; }
 .panel-h-2 .widget-canvas { height: 570px; }
 .panel-h-3 .widget-canvas { height: 890px; }
