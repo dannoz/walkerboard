@@ -36,7 +36,7 @@ export default React.createClass({
             }))
 
         //remove the current from the list of all
-        const currentDashBoard = allDashboards.splice(this.props.current, 1)[0];
+        const currentDashboard = allDashboards.splice(this.props.current, 1)[0];
 
         //others is this list filtered for loading items.
         const otherDashboards = allDashboards.filter(data => data);
@@ -45,7 +45,7 @@ export default React.createClass({
         if (otherDashboards.length) {
             currentTitleAndOtherDropdown = <li className={cx({ "btn-group": true, "open": this.state.dropdownOpen })}>
                 <button className="btn btn-default navbar-btn dropdown-toggle" onClick={this.toggleDropdown} role="button" aria-haspopup="true" aria-expanded="true">
-                    {currentDashBoard.title}
+                    {currentDashboard.title}
                     {" "}
                     <span className="caret"></span>
                 </button>
