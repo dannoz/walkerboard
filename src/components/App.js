@@ -16,6 +16,10 @@ export default React.createClass({
     },
     componentDidMount() {
         this.props.dash.registerCallback(state => this.setState(state));
+        const savedIndex = window.localStorage[`walkerboard:${this.props.dash.url}:currentIndex`];
+        if (savedIndex) { //default is zero anyway so the fact that this could be 0 and falsy is irrelevent
+            this.changeDashboard(savedIndex);
+        }
     },
     getInitialState() {
         return this.props.dash.getState();
@@ -28,7 +32,7 @@ export default React.createClass({
                 //now we are rendering a single board from the many.
                 const onRefreshPanelData = index => this.props.dash.refreshPanelData(index);
                 return <div>
-                    <Header branding={this.props.dash.branding} boards={boards} current={this.state.current} onChangeBoard={index => this.props.dash.changeDashboard(index)} />
+                    <Header branding={this.props.dash.branding} boards={boards} current={this.state.current} onChangeBoard={index => this.changeDashboard(index)} />
                     {this.renderPanels(this.state.board, this.state.panels, onRefreshPanelData)}
                 </div>;
             }
@@ -40,6 +44,11 @@ export default React.createClass({
             error: err => <BoardError error={err} />,
             ok: boardData => <Panels panels={boardData.Panels} data={panelData} onRefreshPanelData={refreshPanelData} />
         });
+    },
+    changeDashboard(index) {
+        //remember the index in localstorage for next time.
+        const newIndex = this.props.dash.changeDashboard(index);
+        window.localStorage[`walkerboard:${this.props.dash.url}:currentIndex`] = newIndex;
     },
     shouldComponentUpdate(nextProps, nextState) {
         //we can ignore props, they won't change

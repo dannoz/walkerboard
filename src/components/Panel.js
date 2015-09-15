@@ -4,6 +4,10 @@ import PanelError from "./PanelError";
 import cx from "classnames";
 import Loading from "./Loading";
 
+//webpack require css
+require("./Panel.scss");
+
+
 export default React.createClass({
     displayName: "Panel",
     render() {

@@ -28,22 +28,25 @@ export default React.createClass({
         }
     },
     render() {
-        const title = this.props.boards[this.props.current].boardData.when({
-            ok: data => data.Title,
-            error: err => err.message,
-            pending: () => "Loading..."
-        });
-
-        const otherDashboards = this.props.boards
+        const allDashboards = this.props.boards
             //map to an object with the original index and title, if data exists
-            .map((board, index) => board.boardData.when({ ok: data => ({index: index, title: data.Title })}))
-            .filter(data => data && data.index !== this.props.current);
+            .map((board, index) => board.boardData.when({
+                ok: data => ({index: index, title: data.Title }),
+                error: err => ({ index: index, title: <span className="text-danger"><span className="glyphicon glyphicon-exclamation-sign" />{` Failed to load board ${index+1}`}</span> })
+            }))
+
+        //remove the current from the list of all
+        const currentDashBoard = allDashboards.splice(this.props.current, 1)[0];
+
+        //others is this list filtered for loading items.
+        const otherDashboards = allDashboards.filter(data => data);
 
         let currentTitleAndOtherDropdown;
         if (otherDashboards.length) {
-            currentTitleAndOtherDropdown = <div className={cx({ "btn-group": true, "open": this.state.dropdownOpen })}>
+            currentTitleAndOtherDropdown = <li className={cx({ "btn-group": true, "open": this.state.dropdownOpen })}>
                 <button className="btn btn-default navbar-btn dropdown-toggle" onClick={this.toggleDropdown} role="button" aria-haspopup="true" aria-expanded="true">
-                    {title + " "}
+                    {currentDashBoard.title}
+                    {" "}
                     <span className="caret"></span>
                 </button>
                 <ul className="dropdown-menu" style={{ marginTop: -10 }}>
@@ -54,9 +57,9 @@ export default React.createClass({
                         }}>{data.title}</a>
                     </li>)}
                 </ul>
-            </div>;
+            </li>;
         } else {
-            currentTitleAndOtherDropdown = <div className="navbar-text">{title}</div>;
+            currentTitleAndOtherDropdown = <li className="navbar-text">{currentDashboard.title}</li>;
         }
 
         let logo;
@@ -68,20 +71,20 @@ export default React.createClass({
         return <div className="navbar navbar-default navbar-fixed-top" role="navigation">
             <div className="container-fluid">
                 <div className="navbar-header">
-                    <a className="navbar-brand">
+                    <a className="navbar-brand" href={this.props.branding.Url}>
                         {logo}
                         {this.props.branding.Text}
                     </a>
                     <div className="navbar-text"><small>powered by <a href="https://github.com/thechriswalker/walkerboard">WalkerBoard</a></small></div>
                 </div>
-                <div className="nav navbar-nav navbar-right">
+                <ul className="nav navbar-nav navbar-right">
                     {currentTitleAndOtherDropdown}
-                    <div className="btn-group" style={{ marginLeft: 16, marginRight: 16 }}>
+                    <li className="btn-group" style={{ marginLeft: 16, marginRight: 16 }}>
                         <button className="btn btn-primary navbar-btn">
                             <span className="glyphicon glyphicon-folder-open" />
                         </button>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
         </div>;
     }

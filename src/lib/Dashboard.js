@@ -22,7 +22,7 @@ function validateDashboard(def) {
 
 //this function ensure the board data we get from a request is in the correct format.
 function validateBoardData(data) {
-    if (typeof data.Title !== "string") {
+    if (data.Title && typeof data.Title !== "string") {
         throw invalidError("no string 'Title' attribute");
     }
     if (!Array.isArray(data.Panels)) {
@@ -43,7 +43,7 @@ function validatePanelDefinition(panel, index) {
     if (typeof panel.Url !== "string") {
         throw invalidError(`Panel[${index}] has no string 'Url' attribute`);
     }
-    if (typeof panel.Title !== "string") {
+    if (panel.Title && typeof panel.Title !== "string") {
         throw invalidError(`Panel[${index}] has no string 'Title' attribute`);
     }
     if (typeof panel.Type !== "string") {

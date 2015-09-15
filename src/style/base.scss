@@ -1,1 +1,8 @@
-$bg: red;
+//All our common variables and definitions go in here.
+// document, document, document!
+$backgroundColor: #eeeeee;
+
+//Panel grid size and spacing
+$cellWidth: 310px;
+$cellHeight: 310px;
+$cellGutter: 10px;

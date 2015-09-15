@@ -1,5 +1,5 @@
-@import "../style/base";
+@import "../style/base.scss";
 
 body {
-    margin-top: 70px;
+    background-color: $backgroundColor;
 }

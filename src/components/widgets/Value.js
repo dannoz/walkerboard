@@ -2,13 +2,15 @@ import React from "react";
 import PanelError from "../PanelError";
 import cx from "classnames";
 
+//webpack require the css
+require("./Value.scss");
+
 const InvalidData = <PanelError msg="Invalid Data" />;
 
 export default React.createClass({
     displayName: "ValueWidget",
     render: function() {
         const data = this.props.data;
-        console.log(data);
         if (typeof data === "string" || !("value" in data)) {
             //bad. it should be an object with a value prop.
             return InvalidData;
@@ -25,13 +27,26 @@ export default React.createClass({
             secondary = 100 * data.value / data.secondary;
             secondaryClass["sub-down"] = secondary < 100;
             secondaryClass["sub-up"] = secondary > 100;
-            secondary = secondary.toFixed(2) + "%";
+            let icon;
+            switch (true) {
+            case secondary < 100:
+                secondaryClass["sub-down"] = true;
+                icon = <span className="glyphicon glyphicon-triangle-bottom" />;
+                break;
+            case secondary > 100:
+                secondaryClass["sub-up"] = true;
+                icon = <span className="glyphicon glyphicon-triangle-top" />;
+                break;
+            default:
+                // no default
+            }
+            secondary = <h2 className={cx(secondaryClass)}>{secondary.toFixed(2) + "%"}{icon}</h2>;
         } else if (typeof data.secondary === "string") {
-            secondary = data.secondary;
+            secondary = <h2 className={cx(secondaryClass)}>{data.secondary}</h2>;
         }
         return <div>
             <h1 className="main">{formatNumber(data.value)}</h1>
-            {secondary && <h2 className={cx(secondaryClass)}>{secondary}</h2>}
+            {secondary}
         </div>;
     }
 });

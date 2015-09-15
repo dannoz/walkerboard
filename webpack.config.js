@@ -1,4 +1,5 @@
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var webpack = require("webpack");
 
 var webpackConfig = {
     entry: [ "./src/bootstrap.js" ],
@@ -25,7 +26,13 @@ var webpackConfig = {
     },
     plugins: [
         // extract inline css into separate file
-        new ExtractTextPlugin("walkerboard.css")
+        new ExtractTextPlugin("walkerboard.css"),
+        new webpack.DefinePlugin({
+            "process.env": Object.keys(process.env).reduce(function(env, key) {
+                env[key] = JSON.stringify(process.env[key]);
+                return env;
+            }, {})
+        })
     ]
 };
 

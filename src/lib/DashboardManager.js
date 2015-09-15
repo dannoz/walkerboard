@@ -13,7 +13,8 @@ export default class DashboardManager {
         this.url = url;
         this.branding = {
             Logo: false,
-            Text: "WalkerBoard"
+            Text: "WalkerBoard",
+            Url: "https://github.com/thechriswalker/walkerboard"
         };
         this.boards = Maybe(); //pending initially
         this.currentBoard = 0;
@@ -46,7 +47,7 @@ export default class DashboardManager {
             boards: this.boards,
             current: this.currentBoard,
             board: this.boards.when({
-                ok: boards => boards[this.currentBoard].boardData,
+                ok: boards => boards[this.currentBoard].boardData
             }),
             panels: this.boards.when({
                 ok: boards => boards[this.currentBoard].panelData
