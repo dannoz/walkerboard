@@ -1,0 +1,69 @@
+.panel-container {
+  margin-top:70px;
+  width: 2550px;
+  height: 2550px;
+  position:relative;
+}
+
+.panel {
+  position:absolute;
+  width: 310px;
+  height:310px;
+  overflow:hidden;
+  top: 0;
+  left:0;
+}
+.panel-body {
+  padding: 0;
+  position: relative;
+}
+
+.panel-y-1 { top: 320px; }
+.panel-y-2 { top: 640px; }
+.panel-y-3 { top: 960px; }
+.panel-y-4 { top: 1280px; }
+.panel-y-5 { top: 1600px; }
+.panel-y-6 { top: 1920px; }
+.panel-y-7 { top: 2240px; }
+
+.panel-x-1 { left: 320px; }
+.panel-x-2 { left: 640px; }
+.panel-x-3 { left: 960px; }
+.panel-x-4 { left: 1280px; }
+.panel-x-5 { left: 1600px; }
+.panel-x-6 { left: 1920px; }
+.panel-x-7 { left: 2240px; }
+
+.panel-h-2 { height: 630px; }
+.panel-h-3 { height: 950px; }
+.panel-h-4 { height: 1270px; }
+
+.panel-w-2 { width: 630px; }
+.panel-w-3 { width: 950px; }
+.panel-w-4 { width: 1270px; }
+
+.panel-body .error {
+  text-align:center;
+}
+
+.panel-loading {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 30px;
+}
+
+.refresh {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  cursor:pointer;
+}
+
+.rotate {
+  -webkit-animation:spin 2s linear infinite;
+  -moz-animation:spin 2s linear infinite;
+  animation:spin 2s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

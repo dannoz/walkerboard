@@ -1,0 +1,67 @@
+{
+    "Branding": {
+        "Logo": "https://beta.tabtab.co/img/logo.png",
+        "Text": "TabTab Metrics Dashboard"
+    },
+    "Boards": [
+        {
+            "Title": "WalkerBoard Demo",
+            "Panels": [
+                {
+                    "Title": "Value",
+                    "Type": "value",
+                    "Url": "tab1/last-24-hours-posts.json",
+                    "Update": 3600,
+                    "X": 0, "Y": 0,
+                    "W": 1, "H": 1
+                },
+                {
+                    "Title": "Value with Comparator",
+                    "Type": "value",
+                    "Url": "json/value_secondary.json",
+                    "Update": 3600,
+                    "X": 1, "Y": 0,
+                    "W": 1, "H": 1
+                },
+                {
+                    "Title": "Gauge",
+                    "Type": "gauge",
+                    "Url": "json/gauge.json",
+                    "Update": 3600,
+                    "X": 2, "Y": 0,
+                    "W": 1, "H": 1
+                },
+                {
+                    "Title": "Funnel",
+                    "Type": "funnel",
+                    "Url": "json/funnel.json",
+                    "Update": 3600,
+                    "X": 0, "Y": 1,
+                    "W": 2, "H": 2
+                },
+                {
+                    "Title": "HighCharts embed",
+                    "Type": "highchart",
+                    "Url": "json/highchart.json",
+                    "Update": 60,
+                    "X": 2, "Y": 1,
+                    "W": 2, "H": 2
+                },
+                {
+                    "Title": "Chart.js embed",
+                    "Type": "chartjs",
+                    "Url": "json/chartjs.json",
+                    "Update": 3600,
+                    "X": 3, "Y": 0,
+                    "W": 1, "H": 1
+                }
+            ]
+        },
+        {
+            "Title": "WalkerBoard Demo 2",
+            "Panels": [
+
+            ]
+        }
+    ]
+}
