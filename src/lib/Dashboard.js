@@ -7,50 +7,63 @@
  */
 import Maybe from "./Maybe";
 import Widgets from "../components/Widgets";
-import { fetchJSONIfPossible } from "./util";
+import { fetchJSONIfPossible, error } from "./util";
+import { resolve } from "url";
 
-const invalidError = reason => new Error(`Invalid Board JSON (${reason})`);
+const invalidError = reason => error(`Invalid Board JSON (${reason})`);
 
 //this is the validator root, with a try catch.
-function validateDashboard(def) {
+function validateDashboard(def, url) {
     try {
-        return validateBoardData(def);
+        return validateBoardData(def, url);
     } catch (err) {
         return err;
     }
 }
 
 //this function ensure the board data we get from a request is in the correct format.
-function validateBoardData(data) {
-    if (data.Title && typeof data.Title !== "string") {
-        throw invalidError("no string 'Title' attribute");
+function validateBoardData(data, url) {
+    if (data.title && typeof data.title !== "string") {
+        // actually we don't care about this...
+        data.title = url;
     }
-    if (!Array.isArray(data.Panels)) {
-        throw invalidError("no array in the 'Panels' attribute");
+    if (!Array.isArray(data.panels)) {
+        throw invalidError("no array in the 'panels' attribute");
     }
-    data.Panels.forEach(validatePanelDefinition);
+    data.panels.forEach(validatePanelDefinition);
     return data;
 }
 
 //check a panel definition is valid
 function validatePanelDefinition(panel, index) {
-    ["Update", "X", "Y", "W", "H"].forEach(prop => {
+    ["x", "y", "w", "h"].forEach(prop => {
         if (typeof panel[prop] !== "number" || Math.round(panel[prop]) !== panel[prop]) {
             throw invalidError(`Panel[${index}] has no integer value for '${prop}'`);
         }
     });
     //NB we don't validate that the url is valid here.
-    if (typeof panel.Url !== "string") {
-        throw invalidError(`Panel[${index}] has no string 'Url' attribute`);
+    //also a panel might have a static data source in "data".
+    if ("data" in panel) {
+        // if data, we should not have update or url.
+        if (("update" in panel) || ("url" in panel)) {
+            throw invalidError(`Panel[${index} has both a 'data' attribute and an 'update' or 'url' attribute`);
+        }
+    } else {
+        if (typeof panel.url !== "string") {
+            throw invalidError(`Panel[${index}] has no string 'url' attribute`);
+        }
+        if (typeof panel.update !== "number" || Math.round(panel.update) !== panel.update) {
+            throw invalidError(`Panel[${index}] has no integer value for 'update'`);
+        }
     }
-    if (panel.Title && typeof panel.Title !== "string") {
-        throw invalidError(`Panel[${index}] has no string 'Title' attribute`);
+    if (panel.title && typeof panel.title !== "string") {
+        throw invalidError(`Panel[${index}] has no string 'title' attribute`);
     }
-    if (typeof panel.Type !== "string") {
-        throw invalidError(`Panel[${index}] has no string 'Type' attribute`);
+    if (typeof panel.type !== "string") {
+        throw invalidError(`Panel[${index}] has no string 'type' attribute`);
     }
-    if (!Widgets.has(panel.Type)) {
-        throw invalidError(`Panel[${index}] has unknown Type: '${panel.Type}'`);
+    if (!Widgets.has(panel.type)) {
+        throw invalidError(`Panel[${index}] has unknown Type: '${panel.type}'`);
     }
 }
 
@@ -58,10 +71,11 @@ const $interval = Symbol("interval");
 const $index = Symbol("index");
 
 export default class Dashboard {
-    constructor(definition, { fetch, notify } = {}) {
+    constructor(definition, { boardUrl, fetch, notify } = {}) {
         this.boardData = Maybe(validateDashboard(definition));
         this.notify = notify;
         this.fetch = fetch;
+        this.boardUrl = boardUrl;
         this.init();
     }
 
@@ -91,8 +105,13 @@ export default class Dashboard {
         this.boardData.when({
             ok: data => {
                 // load panels, and set the initial panel data.
-                this.panelData = data.Panels.map(() => Maybe()); //all are loading initially
-                data.Panels.forEach((panel, index) => {
+                this.panelData = data.panels.map(() => Maybe()); //all are loading initially
+                data.panels.forEach((panel, index) => {
+                    //this only happens the very first time. so here we change the url
+                    //from boardUrl relative to absolute
+                    if (panel.url) {
+                        panel.url = resolve(this.boardUrl, panel.url);
+                    }
                     this.initPanel(panel, index);
                 });
                 this.notify();
@@ -108,19 +127,28 @@ export default class Dashboard {
     }
 
     startInterval(panel) {
-        panel[$interval] = window.setInterval(() => {
-            this.setPanelData(panel, Maybe());
-            this.updatePanel(panel);
-        }, panel.Update * 1e3); //schedule updates.
+        if (panel.url) {
+            panel[$interval] = window.setInterval(() => {
+                this.setPanelData(panel, Maybe());
+                this.updatePanel(panel);
+            }, panel.update * 1e3); //schedule updates.
+        }
     }
 
     stopInterval(panel) {
-        window.clearInterval(panel[$interval]);
+        if (panel.url) {
+            window.clearInterval(panel[$interval]);
+        }
     }
 
     updatePanel(panel) {
+        if ("data" in panel) {
+            this.setPanelData(panel, Maybe(panel.data));
+            this.notify();
+            return;
+        }
         //try a JSON conversion, but return the plain text if that failsß
-        fetchJSONIfPossible(this.fetch, panel.Url)
+        fetchJSONIfPossible(this.fetch, panel.url)
             .catch(error => {
                 //we store the error just like valid data...
                 return error;
@@ -143,7 +171,7 @@ export default class Dashboard {
     refreshPanelData(index) {
         this.boardData.when({
             ok: data => {
-                const panel = data.Panels[index];
+                const panel = data.panels[index];
                 if (panel && !this.panelData[index].isPending) {
                     //OK panel exists and is not currently loading - we can refresh it.
                     this.stopInterval(panel);

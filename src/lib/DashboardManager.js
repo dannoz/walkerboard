@@ -3,7 +3,7 @@
  */
 import Dashboard from "./Dashboard";
 import Maybe from "./Maybe";
-import { fetchJSONIfPossible } from "./util";
+import { fetchJSONIfPossible, error } from "./util";
 
 const $notify = Symbol("notify");
 const $callbacks = Symbol("callbacks");
@@ -12,9 +12,9 @@ export default class DashboardManager {
     constructor(url, { fetch } = {}) {
         this.url = url;
         this.branding = {
-            Logo: false,
-            Text: "WalkerBoard",
-            Url: "https://github.com/thechriswalker/walkerboard"
+            logo: false,
+            text: "WalkerBoard",
+            url: "https://github.com/thechriswalker/walkerboard"
         };
         this.boards = Maybe(); //pending initially
         this.currentBoard = 0;
@@ -29,8 +29,8 @@ export default class DashboardManager {
                 notifyInProgress = true;
                 process.nextTick(() => {
                     const state = this.getState();
-                    this[$callbacks].map(fn => fn(state));
                     notifyInProgress = false;
+                    this[$callbacks].map(fn => fn(state));
                 });
             }
         };
@@ -78,11 +78,11 @@ function load(manager) {
     fetchJSONIfPossible(manager.fetch, manager.url)
         .then(result => {
             manager.boards = Maybe(initialiseBoards(manager, result));
-            if (result.Branding) {
-                manager.branding = Object.assign({}, manager.branding, result.Branding);
+            if (result.branding) {
+                manager.branding = Object.assign({}, manager.branding, result.branding);
             }
-        }, error => {
-            manager.boards = Maybe(error);
+        }, err => {
+            manager.boards = Maybe(err);
         })
         .then(() => manager[$notify]());
 }
@@ -90,9 +90,12 @@ function load(manager) {
 
 //ensure the boards have been loaded
 function initialiseBoards(manager, obj) {
-    if (!Array.isArray(obj.Boards)) {
+    if (!Array.isArray(obj.boards)) {
         //could be a single. benefit of the doubt and all that...
-        obj = { Boards: [obj] };
+        obj = { boards: [obj] };
     }
-    return obj.Boards.map(board => new Dashboard(board, { fetch: manager.fetch, notify: () => manager[$notify]() }));
+    if (obj.boards.length === 0) {
+        return error("No dashboards defined");
+    }
+    return obj.boards.map(board => new Dashboard(board, { boardUrl: manager.url, fetch: manager.fetch, notify: () => manager[$notify]() }));
 }

@@ -12,20 +12,20 @@ export default React.createClass({
     displayName: "Panel",
     render() {
         const def = this.props.definition;
-        const Widget = Widgets.get(def.Type);
+        const Widget = Widgets.get(def.type);
         const panelClass = cx({
             panel: true,
-            [`panel-x-${def.X}`]: true,
-            [`panel-y-${def.Y}`]: true,
-            [`panel-w-${def.W}`]: true,
-            [`panel-h-${def.H}`]: true,
-            [`panel-type-${def.Type}`]: true
+            [`panel-x-${def.x}`]: true,
+            [`panel-y-${def.y}`]: true,
+            [`panel-w-${def.w}`]: true,
+            [`panel-h-${def.h}`]: true,
+            [`panel-type-${def.type}`]: true
         });
 
         return <div className={panelClass}>
             <div className="panel-heading">
-                {def.Title}
-                <div className="refresh refresh-loading" onClick={this.props.onRefresh}><span className={cx({ glyphicon: true, "glyphicon-refresh": true, rotate: this.props.data.when({ pending: () => true }) })} /></div>
+                {def.title}
+                {def.url && <div className="refresh refresh-loading" onClick={this.props.onRefresh}><span className={cx({ glyphicon: true, "glyphicon-refresh": true, rotate: this.props.data.when({ pending: () => true }) })} /></div>}
             </div>
             <div className="panel-body">
                 {this.props.data.when({ //@TODO: save the last good data as always display that, overlaying any loading/error

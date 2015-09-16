@@ -71,4 +71,7 @@
 @keyframes spin { 100% { -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
 .panel-container { margin-top: 70px; left: 5px; width: 2240px; height: 2240px; position: relative; }
+.board-error { width: 960px; margin: 80px auto; text-align: center; }
+
+.board-error pre { text-align: left; }
 body { background-color: #eeeeee; }

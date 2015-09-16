@@ -4,7 +4,7 @@ import Header from "./Header";
 import Panels from "./Panels";
 import Loading from "./Loading";
 import BoardError from "./BoardError";
-
+import { error } from "../lib/util";
 //webpack load css
 require("./App.scss");
 
@@ -41,8 +41,8 @@ export default React.createClass({
     renderPanels(board, panelData, refreshPanelData) {
         return board.when({
             pending: () => <Loading />,
-            error: err => <BoardError error={err} />,
-            ok: boardData => <Panels panels={boardData.Panels} data={panelData} onRefreshPanelData={refreshPanelData} />
+            error: err => <BoardError error={err} url={this.props.dash.url} />,
+            ok: boardData => <Panels panels={boardData.panels} data={panelData} onRefreshPanelData={refreshPanelData} />
         });
     },
     changeDashboard(index) {
@@ -54,6 +54,6 @@ export default React.createClass({
         //we can ignore props, they won't change
         //state has "board" and "panels". Board is a maybe, and panels is an array of maybes.
         //but the panels array is immutable. so we can check easily.
-        return this.state.board !== nextState.board || this.state.panels !== nextState.panels;
+        return ["boards", "board", "panels"].reduce((somethingHasChanged, key) => somethingHasChanged ? somethingHasChanged : this.state[key] !== nextState[key], false);
     }
 });
