@@ -41,6 +41,7 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
     console.log("loading dev server");
     webpackConfig.entry.unshift("webpack/hot/dev-server");
     webpackConfig.devtool = "inline-source-map";
+    webpackConfig.output.publicPath = "http://localhost:8080/";
     webpackConfig.module.postLoaders = webpackConfig.module.postLoaders || [];
     webpackConfig.module.postLoaders.push({ test: /components\/(widgets\/|)[^\/]+\.js$/, exclude: /node_modules/, loader: "react-hot" });
     //overwrite with the sourcemap generating one with HMR
