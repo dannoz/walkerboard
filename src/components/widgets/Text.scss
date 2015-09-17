@@ -1,9 +1,6 @@
 @import "../../style/base.scss";
 
-.panel-type-text {
-    .panel-body {
-        padding: 10px;
-        text-align: center;
-        font-size: 2em;
-    }
+.widget-type-text .widget-body {
+    text-align: center;
+    font-size: 2em;
 }

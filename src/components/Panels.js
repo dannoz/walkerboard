@@ -10,11 +10,12 @@ export default React.createClass({
     propTypes: {
         panels: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
         data: React.PropTypes.arrayOf(React.PropTypes.instanceOf(Maybe)).isRequired,
-        onRefreshPanelData: React.PropTypes.func.isRequired
+        onRefreshPanelData: React.PropTypes.func.isRequired,
+        width: React.PropTypes.number.isRequired
     },
     render() {
-        return <div className="panel-container">
-            {this.props.panels.map((panel, index) => <Panel key={`panel-${index}`} definition={panel} data={this.props.data[index]} onRefresh={() => this.props.onRefreshPanelData(index)} />)}
+        return <div className="widget-container" style={{ width: this.props.width }}>
+            {this.props.panels.map((panel, index) => <Panel key={`widget-${index}`} definition={panel} data={this.props.data[index]} onRefresh={() => this.props.onRefreshPanelData(index)} />)}
         </div>;
     }
 });

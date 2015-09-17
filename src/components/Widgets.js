@@ -8,6 +8,7 @@ import Gauge from "./widgets/Gauge";
 import HighChart from "./widgets/HighChart";
 import ChartJS from "./widgets/ChartJS";
 import Text from "./widgets/Text";
+import Markdown from "./widgets/Markdown";
 
 const Widgets = new Map();
 export default Widgets;
@@ -19,3 +20,4 @@ Widgets.set("gauge", Gauge);
 Widgets.set("highchart", HighChart);
 Widgets.set("chartjs", ChartJS);
 Widgets.set("text", Text);
+Widgets.set("markdown", Markdown);

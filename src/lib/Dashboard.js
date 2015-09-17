@@ -9,6 +9,7 @@ import Maybe from "./Maybe";
 import Widgets from "../components/Widgets";
 import { fetchJSONIfPossible, error } from "./util";
 import { resolve } from "url";
+import { getWidgetInnerSize, getDashboardSize } from "./sizing";
 
 const invalidError = reason => error(`Invalid Board JSON (${reason})`);
 
@@ -69,6 +70,9 @@ function validatePanelDefinition(panel, index) {
 
 const $interval = Symbol("interval");
 const $index = Symbol("index");
+const $loading = Symbol("loading");
+//uuid for keeping track of loads
+let loadId = 0;
 
 export default class Dashboard {
     constructor(definition, { boardUrl, fetch, notify } = {}) {
@@ -76,6 +80,7 @@ export default class Dashboard {
         this.notify = notify;
         this.fetch = fetch;
         this.boardUrl = boardUrl;
+        this.paused = true;
         this.init();
     }
 
@@ -84,7 +89,7 @@ export default class Dashboard {
         if (!this.paused) {
             this.paused = true;
             this.boardData.when({
-                ok: data => data.Panels.forEach(panel => this.stopInterval(panel))
+                ok: data => data.panels.forEach(panel => this.stopInterval(panel))
             });
             this.notify();
         }
@@ -94,7 +99,7 @@ export default class Dashboard {
         if (this.paused) {
             this.paused = false;
             this.boardData.when({
-                ok: data => data.Panels.forEach(panel => this.startInterval(panel))
+                ok: data => data.panels.forEach(panel => this.startInterval(panel))
             });
             this.notify();
         }
@@ -105,6 +110,7 @@ export default class Dashboard {
         this.boardData.when({
             ok: data => {
                 // load panels, and set the initial panel data.
+                data.size = getDashboardSize(data.panels);
                 this.panelData = data.panels.map(() => Maybe()); //all are loading initially
                 data.panels.forEach((panel, index) => {
                     //this only happens the very first time. so here we change the url
@@ -122,14 +128,16 @@ export default class Dashboard {
     initPanel(panel, index) {
         panel[$index] = index;
         panel.lastUpdated = null;
-        this.updatePanel(panel); //do initial load
-        this.startInterval(panel);
+        panel.innerSize = getWidgetInnerSize(panel);
+        if ("data" in panel) {
+            this.setPanelData(panel, Maybe(panel.data));
+        }
     }
 
     startInterval(panel) {
         if (panel.url) {
+            this.updatePanel(panel);
             panel[$interval] = window.setInterval(() => {
-                this.setPanelData(panel, Maybe());
                 this.updatePanel(panel);
             }, panel.update * 1e3); //schedule updates.
         }
@@ -143,18 +151,24 @@ export default class Dashboard {
 
     updatePanel(panel) {
         if ("data" in panel) {
-            this.setPanelData(panel, Maybe(panel.data));
-            this.notify();
             return;
         }
-        //try a JSON conversion, but return the plain text if that failsß
+        //say we are loading
+        this.setPanelData(panel, Maybe());
+        //try a JSON conversion, but return the plain text if that fails
+        const thisLoadId = panel[$loading] = loadId++;
         fetchJSONIfPossible(this.fetch, panel.url)
-            .catch(error => {
+            .catch(err => {
                 //we store the error just like valid data...
-                return error;
+                return err;
             })
             .then(data => {
+                if (panel[$loading] !== thisLoadId) {
+                    //we aborted!
+                    return;
+                }
                 //console.log(`panel data for ${panel.Title}`, data);
+                panel[$loading] = false;
                 panel.lastUpdated = new Date();
                 this.setPanelData(panel, Maybe(data));
                 this.notify();
@@ -172,10 +186,10 @@ export default class Dashboard {
         this.boardData.when({
             ok: data => {
                 const panel = data.panels[index];
-                if (panel && !this.panelData[index].isPending) {
+                if (panel) {
                     //OK panel exists and is not currently loading - we can refresh it.
                     this.stopInterval(panel);
-                    this.initPanel(panel, index);
+                    this.startInterval(panel);
                 }
             }
         });

@@ -40,12 +40,16 @@ export default React.createClass({
             default:
                 // no default
             }
-            secondary = <h2 className={cx(secondaryClass)}>{secondary.toFixed(2) + "%"}{icon}</h2>;
+            secondary = <div className={cx(secondaryClass)}>{secondary.toFixed(2) + "%"}{icon}</div>;
         } else if (typeof data.secondary === "string") {
-            secondary = <h2 className={cx(secondaryClass)}>{data.secondary}</h2>;
+            secondary = <div className={cx(secondaryClass)}>{data.secondary}</div>;
         }
+        const mainClass = {
+            main: true,
+            "no-sub": !secondary
+        };
         return <div>
-            <h1 className="main">{formatNumber(data.value)}</h1>
+            <div className={cx(mainClass)}>{formatNumber(data.value)}</div>
             {secondary}
         </div>;
     }

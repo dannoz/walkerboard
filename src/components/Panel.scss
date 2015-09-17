@@ -1,7 +1,7 @@
 // Panel specific styling
 @import "../style/base";
 
-.panel {
+.widget {
     position: absolute;
     width: $cellWidth;
     height: $cellHeight;
@@ -9,53 +9,84 @@
     top: 0;
     left: 0;
 }
-
-.panel-body {
+.panel {
     padding: 0;
+}
+.widget-body {
+    padding: 0;
+    margin: $widgetPadding;
     position: relative;
 }
 
-@for $i from 1 through 7 {
-  .panel-x-#{$i} { left: ($cellWidth + $cellGutter) * $i; }
-  .panel-y-#{$i} { top: ($cellHeight + $cellGutter) * $i; }
+@for $i from 1 through 20 {
+  .widget-x-#{$i} { left: ($cellWidth + $cellGutter) * $i; }
+  .widget-y-#{$i} { top: ($cellHeight + $cellGutter) * $i; }
 }
 
-@for $i from 2 through 4 {
-    .panel-w-#{$i} { width: ($cellWidth + $cellGutter) * $i - $cellGutter; }
-    .panel-h-#{$i} { height: ($cellHeight + $cellGutter) * $i - $cellGutter; }
+@for $i from 1 through 20 {
+    $width: ($cellWidth + $cellGutter) * $i - $cellGutter;
+    $height: ($cellHeight + $cellGutter) * $i - $cellGutter;
+    .widget-w-#{$i} {
+        width: $width;
+        .widget-body {
+            width: $width - $widgetPadding * 2;
+        }
+    }
+    .widget-h-#{$i} {
+        height: $height;
+        .widget-body {
+            height: $height - $widgetPadding * 2 - $widgetHeaderSize;
+        }
+    }
+
 }
 
-.panel-body .error {
+.widget-body .error {
     text-align: center;
 }
 
-.panel-heading {
+.widget-heading {
     text-transform: uppercase;
-    min-height: 40px;
+    height: $widgetHeaderSize;
 }
 
-.panel-loading {
+.widget-loading {
     text-align: center;
     margin-top: 50px;
     font-size: 30px;
 }
 
-.refresh {
+.widget-refresh {
     display: block;
     position: absolute;
     top: 10px;
     right: 8px;
-    padding: 2px 5px;
+    text-align: center;
     cursor: pointer;
     width: 24px;
     height: 24px;
+    background-color: rgb(255,255,255);
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+    border-radius: 50%;
+    opacity: 0.2;
+    .glyphicon {
+        top: 0px;
+        width: 24px;
+        height:24px;
+        font-size: 14px;
+        line-height: 24px;
+    }
 }
 
-.rotate {
-    -webkit-animation: spin 2s linear infinite;
-    -moz-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
+.widget:hover .widget-refresh,
+.widget-rotate {
+    opacity: 1;
 }
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.widget-rotate {
+    animation: widget-spin 2s linear infinite;
+}
+
+@-moz-keyframes widget-spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes widget-spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes widget-spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

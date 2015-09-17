@@ -42,8 +42,8 @@ export default React.createClass({
 
         let currentTitleAndOtherDropdown;
         if (otherDashboards.length) {
-            currentTitleAndOtherDropdown = <li className={cx({ "btn-group": true, "open": this.state.dropdownOpen })}>
-                <button className="btn btn-default navbar-btn dropdown-toggle" onClick={this.toggleDropdown} role="button" aria-haspopup="true" aria-expanded="true">
+            currentTitleAndOtherDropdown = <li style={{ marginRight: 8 }}className={cx({ "btn-group": true, "open": this.state.dropdownOpen })}>
+                <button className="btn btn-link navbar-btn dropdown-toggle" onClick={this.toggleDropdown} role="button" aria-haspopup="true" aria-expanded="true">
                     {currentDashboard.title}
                     {" "}
                     <span className="caret"></span>
@@ -75,9 +75,14 @@ export default React.createClass({
                 </div>
                 <ul className="nav navbar-nav navbar-right">
                     {currentTitleAndOtherDropdown}
-                    <li className="btn-group" style={{ marginLeft: 16, marginRight: 16 }}>
-                        <button className="btn btn-primary navbar-btn">
+                    <li className="btn-group" style={{ marginRight: 8 }}>
+                        <button className="btn btn-primary navbar-btn" title="Open new Dashboard">
                             <span className="glyphicon glyphicon-folder-open" />
+                        </button>
+                    </li>
+                    <li className="btn-group" style={{ marginRight: 16 }}>
+                        <button className="btn navbar-btn" title="Reload" onClick={() => window.location.reload()}>
+                            <span className="glyphicon glyphicon-refresh" />
                         </button>
                     </li>
                 </ul>

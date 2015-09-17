@@ -4,7 +4,7 @@ import Header from "./Header";
 import Panels from "./Panels";
 import Loading from "./Loading";
 import BoardError from "./BoardError";
-import { error } from "../lib/util";
+
 //webpack load css
 require("./App.scss");
 
@@ -16,17 +16,16 @@ export default React.createClass({
     },
     componentDidMount() {
         this.props.dash.registerCallback(state => this.setState(state));
-        const savedIndex = window.localStorage[`walkerboard:${this.props.dash.url}:currentIndex`];
-        if (savedIndex) { //default is zero anyway so the fact that this could be 0 and falsy is irrelevent
-            this.changeDashboard(savedIndex);
-        }
     },
     getInitialState() {
         return this.props.dash.getState();
     },
     render() {
         return this.state.boards.when({
-            pending: () => <Loading url={this.props.dash.url} />,
+            pending: () => <Loading>
+                    <p>Loading WalkerBoard...</p>
+                    <p><code>{this.props.dash.url}</code></p>
+                </Loading>,
             error: err => <BoardError error={err} url={this.props.dash.url} />,
             ok: boards => {
                 //now we are rendering a single board from the many.
@@ -42,13 +41,11 @@ export default React.createClass({
         return board.when({
             pending: () => <Loading />,
             error: err => <BoardError error={err} url={this.props.dash.url} />,
-            ok: boardData => <Panels panels={boardData.panels} data={panelData} onRefreshPanelData={refreshPanelData} />
+            ok: boardData => <Panels width={boardData.size.width} panels={boardData.panels} data={panelData} onRefreshPanelData={refreshPanelData} />
         });
     },
     changeDashboard(index) {
-        //remember the index in localstorage for next time.
-        const newIndex = this.props.dash.changeDashboard(index);
-        window.localStorage[`walkerboard:${this.props.dash.url}:currentIndex`] = newIndex;
+        this.props.dash.changeDashboard(index);
     },
     shouldComponentUpdate(nextProps, nextState) {
         //we can ignore props, they won't change

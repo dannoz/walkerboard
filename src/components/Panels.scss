@@ -1,10 +1,11 @@
 //This is the panels box. simply position it correctly and make it massive
 @import "../style/base";
 
-.panel-container {
+
+//the size of this is worked out in java script
+.widget-container {
     margin-top:70px;
-    left: $cellGutter / 2;
-    width: ($cellWidth + $cellGutter) * 7;
-    height: ($cellHeight + $cellGutter) * 7;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
 }
