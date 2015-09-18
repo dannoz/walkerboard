@@ -1,142 +1,5516 @@
 {
-    "branding": {
-        "text": "WalkerBoard Widget Demo"
-    },
-    "boards": [
+  "branding": {
+    "text": "WalkerBoard Test Dashboard"
+  },
+  "boards": [
+    {
+      "title": "Welcome to WalkerBoard",
+      "panels": [
         {
-            "title": "All widget types (static data)",
-            "panels": [
-                {
-                    "type": "text",
-                    "data": "Value Widget",
-                    "transparent": true,
-                    "x": 0, "y": 0,
-                    "w": 2, "h": 1
-                },
-                {
-                    "title": "Value Alone",
-                    "type": "value",
-                    "data": { "value": 5 },
-                    "x": 2, "y": 0,
-                    "w": 2, "h": 2
-                },
-                {
-                    "title": "Value with Comparator",
-                    "type": "value",
-                    "data": { "value": 5, "secondary": 4},
-                    "x": 4, "y": 0,
-                    "w": 2, "h": 2
-                },
-                {
-                    "title": "Value with Text",
-                    "type": "value",
-                    "data": { "value": 5, "secondary": "Hello World!" },
-                    "x": 6, "y": 0,
-                    "w": 2, "h": 2
-                },
-                {
-                    "type": "text",
-                    "data": "Gauge Widget",
-                    "transparent": true,
-                    "x": 0, "y": 3,
-                    "w": 2, "h": 1
-                },
-                {
-                    "title": "Gauge",
-                    "type": "gauge",
-                    "data": { "min": 0, "max": 200, "value": 150 },
-                    "x": 2, "y": 3,
-                    "w": 2, "h": 2
-                },
-                {
-                    "type": "text",
-                    "data": "ChartJS Widget",
-                    "transparent": true,
-                    "x": 0, "y": 3,
-                    "w": 2, "h": 1
-                },
-                {
-                    "title": "ChartJS Line Chart",
-                    "type": "chartjs",
-                    "data" : {"type":"Line","data":{"labels":["","","","","","","","","",""],"datasets":[{"data":[0,0,0,0,0,0,0,2,1,0],"label":"Last 24 Hours","fillColor":"rgba(220,220,220,0.2)","strokeColor":"rgba(220,220,220,1)","pointColor":"rgba(220,220,220,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(220,220,220,1)"},{"data":[1,0,0,0,0,0,0,2,2,2],"label":"Last 7 Days","fillColor":"rgba(151,187,205,0.2)","strokeColor":"rgba(151,187,205,1)","pointColor":"rgba(151,187,205,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(151,187,205,1)"},{"data":[1,1,1,1,1,1,1,3,3,3],"label":"Last 30 Days","fillColor":"rgba(121,127,215,0.2)","strokeColor":"rgba(121,127,215,1)","pointColor":"rgba(121,127,215,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(121,127,215,1)"},{"data":[1,1,1,1,1,1,1,3,3,3],"label":"Last 90 Days","fillColor":"rgba(151,127,145,0.2)","strokeColor":"rgba(151,127,145,1)","pointColor":"rgba(151,127,145,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(151,127,145,1)"}]},"options":{}},
-                    "x": 2, "y": 3,
-                    "w": 4, "h": 2
-                }
-            ]
-        },
-        {
-            "title": "Error 404",
-            "panels": [
-                {
-                    "title": "404",
-                    "type": "value",
-                    "url": "/not-a-real-page.404",
-                    "update": 30,
-                    "x": 0, "y": 0,
-                    "w": 1, "h": 1
-                }
-            ]
-        },
-        {
-            "title": "Sizing: ChartJS",
-            "panels": [
-                {
-                    "title": "ChartJS 1x1",
-                    "type": "chartjs",
-                    "data" : {"type":"Line","data":{"labels":["","","","","","","","","",""],"datasets":[{"data":[0,0,0,0,0,0,0,2,1,0],"label":"Last 24 Hours","fillColor":"rgba(220,220,220,0.2)","strokeColor":"rgba(220,220,220,1)","pointColor":"rgba(220,220,220,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(220,220,220,1)"},{"data":[1,0,0,0,0,0,0,2,2,2],"label":"Last 7 Days","fillColor":"rgba(151,187,205,0.2)","strokeColor":"rgba(151,187,205,1)","pointColor":"rgba(151,187,205,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(151,187,205,1)"},{"data":[1,1,1,1,1,1,1,3,3,3],"label":"Last 30 Days","fillColor":"rgba(121,127,215,0.2)","strokeColor":"rgba(121,127,215,1)","pointColor":"rgba(121,127,215,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(121,127,215,1)"},{"data":[1,1,1,1,1,1,1,3,3,3],"label":"Last 90 Days","fillColor":"rgba(151,127,145,0.2)","strokeColor":"rgba(151,127,145,1)","pointColor":"rgba(151,127,145,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(151,127,145,1)"}]},"options":{}},
-                    "x": 0, "y": 0,
-                    "w": 1, "h": 1
-                },
-                {
-                    "title": "ChartJS 1x2",
-                    "type": "chartjs",
-                    "data" : {"type":"Line","data":{"labels":["","","","","","","","","",""],"datasets":[{"data":[0,0,0,0,0,0,0,2,1,0],"label":"Last 24 Hours","fillColor":"rgba(220,220,220,0.2)","strokeColor":"rgba(220,220,220,1)","pointColor":"rgba(220,220,220,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(220,220,220,1)"},{"data":[1,0,0,0,0,0,0,2,2,2],"label":"Last 7 Days","fillColor":"rgba(151,187,205,0.2)","strokeColor":"rgba(151,187,205,1)","pointColor":"rgba(151,187,205,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(151,187,205,1)"},{"data":[1,1,1,1,1,1,1,3,3,3],"label":"Last 30 Days","fillColor":"rgba(121,127,215,0.2)","strokeColor":"rgba(121,127,215,1)","pointColor":"rgba(121,127,215,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(121,127,215,1)"},{"data":[1,1,1,1,1,1,1,3,3,3],"label":"Last 90 Days","fillColor":"rgba(151,127,145,0.2)","strokeColor":"rgba(151,127,145,1)","pointColor":"rgba(151,127,145,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(151,127,145,1)"}]},"options":{}},
-                    "x": 1, "y": 0,
-                    "w": 2, "h": 1
-                },
-                {
-                    "title": "ChartJS 2x1",
-                    "type": "chartjs",
-                    "data" : {"type":"Line","data":{"labels":["","","","","","","","","",""],"datasets":[{"data":[0,0,0,0,0,0,0,2,1,0],"label":"Last 24 Hours","fillColor":"rgba(220,220,220,0.2)","strokeColor":"rgba(220,220,220,1)","pointColor":"rgba(220,220,220,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(220,220,220,1)"},{"data":[1,0,0,0,0,0,0,2,2,2],"label":"Last 7 Days","fillColor":"rgba(151,187,205,0.2)","strokeColor":"rgba(151,187,205,1)","pointColor":"rgba(151,187,205,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(151,187,205,1)"},{"data":[1,1,1,1,1,1,1,3,3,3],"label":"Last 30 Days","fillColor":"rgba(121,127,215,0.2)","strokeColor":"rgba(121,127,215,1)","pointColor":"rgba(121,127,215,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(121,127,215,1)"},{"data":[1,1,1,1,1,1,1,3,3,3],"label":"Last 90 Days","fillColor":"rgba(151,127,145,0.2)","strokeColor":"rgba(151,127,145,1)","pointColor":"rgba(151,127,145,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(151,127,145,1)"}]},"options":{}},
-                    "x": 3, "y": 0,
-                    "w": 1, "h": 2
-                },
-                {
-                    "title": "ChartJS 1x3",
-                    "type": "chartjs",
-                    "data" : {"type":"Line","data":{"labels":["","","","","","","","","",""],"datasets":[{"data":[0,0,0,0,0,0,0,2,1,0],"label":"Last 24 Hours","fillColor":"rgba(220,220,220,0.2)","strokeColor":"rgba(220,220,220,1)","pointColor":"rgba(220,220,220,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(220,220,220,1)"},{"data":[1,0,0,0,0,0,0,2,2,2],"label":"Last 7 Days","fillColor":"rgba(151,187,205,0.2)","strokeColor":"rgba(151,187,205,1)","pointColor":"rgba(151,187,205,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(151,187,205,1)"},{"data":[1,1,1,1,1,1,1,3,3,3],"label":"Last 30 Days","fillColor":"rgba(121,127,215,0.2)","strokeColor":"rgba(121,127,215,1)","pointColor":"rgba(121,127,215,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(121,127,215,1)"},{"data":[1,1,1,1,1,1,1,3,3,3],"label":"Last 90 Days","fillColor":"rgba(151,127,145,0.2)","strokeColor":"rgba(151,127,145,1)","pointColor":"rgba(151,127,145,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(151,127,145,1)"}]},"options":{}},
-                    "x": 0, "y": 1,
-                    "w": 3, "h": 1
-                },
-                {
-                    "title": "ChartJS 1x4",
-                    "type": "chartjs",
-                    "data" : {"type":"Line","data":{"labels":["","","","","","","","","",""],"datasets":[{"data":[0,0,0,0,0,0,0,2,1,0],"label":"Last 24 Hours","fillColor":"rgba(220,220,220,0.2)","strokeColor":"rgba(220,220,220,1)","pointColor":"rgba(220,220,220,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(220,220,220,1)"},{"data":[1,0,0,0,0,0,0,2,2,2],"label":"Last 7 Days","fillColor":"rgba(151,187,205,0.2)","strokeColor":"rgba(151,187,205,1)","pointColor":"rgba(151,187,205,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(151,187,205,1)"},{"data":[1,1,1,1,1,1,1,3,3,3],"label":"Last 30 Days","fillColor":"rgba(121,127,215,0.2)","strokeColor":"rgba(121,127,215,1)","pointColor":"rgba(121,127,215,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(121,127,215,1)"},{"data":[1,1,1,1,1,1,1,3,3,3],"label":"Last 90 Days","fillColor":"rgba(151,127,145,0.2)","strokeColor":"rgba(151,127,145,1)","pointColor":"rgba(151,127,145,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(151,127,145,1)"}]},"options":{}},
-                    "x": 0, "y": 2,
-                    "w": 4, "h": 1
-                },
-                {
-                    "title": "ChartJS 2x2",
-                    "type": "chartjs",
-                    "data" : {"type":"Line","data":{"labels":["","","","","","","","","",""],"datasets":[{"data":[0,0,0,0,0,0,0,2,1,0],"label":"Last 24 Hours","fillColor":"rgba(220,220,220,0.2)","strokeColor":"rgba(220,220,220,1)","pointColor":"rgba(220,220,220,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(220,220,220,1)"},{"data":[1,0,0,0,0,0,0,2,2,2],"label":"Last 7 Days","fillColor":"rgba(151,187,205,0.2)","strokeColor":"rgba(151,187,205,1)","pointColor":"rgba(151,187,205,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(151,187,205,1)"},{"data":[1,1,1,1,1,1,1,3,3,3],"label":"Last 30 Days","fillColor":"rgba(121,127,215,0.2)","strokeColor":"rgba(121,127,215,1)","pointColor":"rgba(121,127,215,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(121,127,215,1)"},{"data":[1,1,1,1,1,1,1,3,3,3],"label":"Last 90 Days","fillColor":"rgba(151,127,145,0.2)","strokeColor":"rgba(151,127,145,1)","pointColor":"rgba(151,127,145,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(151,127,145,1)"}]},"options":{}},
-                    "x": 4, "y": 0,
-                    "w": 2, "h": 2
-                },
-                {
-                    "title": "ChartJS 2x2",
-                    "type": "chartjs",
-                    "data" : {"type":"Line","data":{"labels":["","","","","","","","","",""],"datasets":[{"data":[0,0,0,0,0,0,0,2,1,0],"label":"Last 24 Hours","fillColor":"rgba(220,220,220,0.2)","strokeColor":"rgba(220,220,220,1)","pointColor":"rgba(220,220,220,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(220,220,220,1)"},{"data":[1,0,0,0,0,0,0,2,2,2],"label":"Last 7 Days","fillColor":"rgba(151,187,205,0.2)","strokeColor":"rgba(151,187,205,1)","pointColor":"rgba(151,187,205,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(151,187,205,1)"},{"data":[1,1,1,1,1,1,1,3,3,3],"label":"Last 30 Days","fillColor":"rgba(121,127,215,0.2)","strokeColor":"rgba(121,127,215,1)","pointColor":"rgba(121,127,215,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(121,127,215,1)"},{"data":[1,1,1,1,1,1,1,3,3,3],"label":"Last 90 Days","fillColor":"rgba(151,127,145,0.2)","strokeColor":"rgba(151,127,145,1)","pointColor":"rgba(151,127,145,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(151,127,145,1)"}]},"options":{}},
-                    "x": 4, "y": 2,
-                    "w": 4, "h": 2
-                },
-                {
-                    "title": "ChartJS 2x2",
-                    "type": "chartjs",
-                    "data" : {"type":"Line","data":{"labels":["","","","","","","","","",""],"datasets":[{"data":[0,0,0,0,0,0,0,2,1,0],"label":"Last 24 Hours","fillColor":"rgba(220,220,220,0.2)","strokeColor":"rgba(220,220,220,1)","pointColor":"rgba(220,220,220,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(220,220,220,1)"},{"data":[1,0,0,0,0,0,0,2,2,2],"label":"Last 7 Days","fillColor":"rgba(151,187,205,0.2)","strokeColor":"rgba(151,187,205,1)","pointColor":"rgba(151,187,205,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(151,187,205,1)"},{"data":[1,1,1,1,1,1,1,3,3,3],"label":"Last 30 Days","fillColor":"rgba(121,127,215,0.2)","strokeColor":"rgba(121,127,215,1)","pointColor":"rgba(121,127,215,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(121,127,215,1)"},{"data":[1,1,1,1,1,1,1,3,3,3],"label":"Last 90 Days","fillColor":"rgba(151,127,145,0.2)","strokeColor":"rgba(151,127,145,1)","pointColor":"rgba(151,127,145,1)","pointStrokeColor":"#fff","pointHighlightFill":"#fff","pointHighlightStroke":"rgba(151,127,145,1)"}]},"options":{}},
-                    "x": 0, "y": 3,
-                    "w": 4, "h": 3
-                }
-            ]
+          "type": "markdown",
+          "data": "# WalkerBoard\n\nLike Geckoboard but with <del>less</del> *different* features.\n\n## widgets\n\n - Text\n - Markdown\n - Value (optional secondary stat/text)\n - ChartJS chart\n\nnot implemented yet\n\n - Funnel\n - Gauge\n - HighChart (? I had this in the old version...)\n\n## getting started\n\nTo try it out go to `https://thechriswalker.github.io/walkerboard`.\n\nYou can load a specific `board.json` by passing the url to it in the query string (yay, CORS).\n\nTo create your own `board.json`, check out the sample one and see how it works.\n\n## development\n\n`git clone` and `npm install` and `npm run dev` and open `http://localhost:8080/dev.html`\n",
+          "x": 0,
+          "y": 0,
+          "w": 4,
+          "h": 6
         }
-    ]
+      ]
+    },
+    {
+      "title": "ValueWidget Sizes (with titles, value and secondary (text))",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "title": "ValueWidget 2x2",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": "secondary"
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "title": "ValueWidget 4x2",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": "secondary"
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "title": "ValueWidget 2x1",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": "secondary"
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "title": "ValueWidget 4x4",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": "secondary"
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "title": "ValueWidget 6x4",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": "secondary"
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "title": "ValueWidget 8x4",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": "secondary"
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "title": "ValueWidget 6x6",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": "secondary"
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "title": "ValueWidget 8x6",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": "secondary"
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "ValueWidget Sizes (with titles, value and secondary (more))",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "title": "ValueWidget 2x2",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 23456
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "title": "ValueWidget 4x2",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 23456
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "title": "ValueWidget 2x1",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 23456
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "title": "ValueWidget 4x4",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 23456
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "title": "ValueWidget 6x4",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 23456
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "title": "ValueWidget 8x4",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 23456
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "title": "ValueWidget 6x6",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 23456
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "title": "ValueWidget 8x6",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 23456
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "ValueWidget Sizes (with titles, value and secondary (less))",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "title": "ValueWidget 2x2",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 1234
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "title": "ValueWidget 4x2",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 1234
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "title": "ValueWidget 2x1",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 1234
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "title": "ValueWidget 4x4",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 1234
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "title": "ValueWidget 6x4",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 1234
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "title": "ValueWidget 8x4",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 1234
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "title": "ValueWidget 6x6",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 1234
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "title": "ValueWidget 8x6",
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 1234
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "ValueWidget Sizes (with titles, single value)",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "title": "ValueWidget 2x2",
+          "type": "value",
+          "data": {
+            "value": 12345
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "title": "ValueWidget 4x2",
+          "type": "value",
+          "data": {
+            "value": 12345
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "title": "ValueWidget 2x1",
+          "type": "value",
+          "data": {
+            "value": 12345
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "title": "ValueWidget 4x4",
+          "type": "value",
+          "data": {
+            "value": 12345
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "title": "ValueWidget 6x4",
+          "type": "value",
+          "data": {
+            "value": 12345
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "title": "ValueWidget 8x4",
+          "type": "value",
+          "data": {
+            "value": 12345
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "title": "ValueWidget 6x6",
+          "type": "value",
+          "data": {
+            "value": 12345
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "title": "ValueWidget 8x6",
+          "type": "value",
+          "data": {
+            "value": 12345
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "ValueWidget Sizes (no titles, value and secondary (text))",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": "secondary"
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": "secondary"
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": "secondary"
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": "secondary"
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": "secondary"
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": "secondary"
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": "secondary"
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": "secondary"
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "ValueWidget Sizes (no titles, value and secondary (more))",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 23456
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 23456
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 23456
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 23456
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 23456
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 23456
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 23456
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 23456
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "ValueWidget Sizes (no titles, value and secondary (less))",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 1234
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 1234
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 1234
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 1234
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 1234
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 1234
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 1234
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "type": "value",
+          "data": {
+            "value": 12345,
+            "secondary": 1234
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "ValueWidget Sizes (no titles, single value)",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "type": "value",
+          "data": {
+            "value": 12345
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "type": "value",
+          "data": {
+            "value": 12345
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "type": "value",
+          "data": {
+            "value": 12345
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "type": "value",
+          "data": {
+            "value": 12345
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "type": "value",
+          "data": {
+            "value": 12345
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "type": "value",
+          "data": {
+            "value": 12345
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "type": "value",
+          "data": {
+            "value": 12345
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "type": "value",
+          "data": {
+            "value": 12345
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "TextWidget Sizes (with titles, text)",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "title": "TextWidget 2x2",
+          "type": "text",
+          "data": "hello world!",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "title": "TextWidget 4x2",
+          "type": "text",
+          "data": "hello world!",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "title": "TextWidget 2x1",
+          "type": "text",
+          "data": "hello world!",
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "title": "TextWidget 4x4",
+          "type": "text",
+          "data": "hello world!",
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "title": "TextWidget 6x4",
+          "type": "text",
+          "data": "hello world!",
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "title": "TextWidget 8x4",
+          "type": "text",
+          "data": "hello world!",
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "title": "TextWidget 6x6",
+          "type": "text",
+          "data": "hello world!",
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "title": "TextWidget 8x6",
+          "type": "text",
+          "data": "hello world!",
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "TextWidget Sizes (no titles, text)",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "type": "text",
+          "data": "hello world!",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "type": "text",
+          "data": "hello world!",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "type": "text",
+          "data": "hello world!",
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "type": "text",
+          "data": "hello world!",
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "type": "text",
+          "data": "hello world!",
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "type": "text",
+          "data": "hello world!",
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "type": "text",
+          "data": "hello world!",
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "type": "text",
+          "data": "hello world!",
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "MarkdownWidget Sizes (with titles, simple)",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "title": "MarkdownWidget 2x2",
+          "type": "markdown",
+          "data": "## Markdown\nFor the **win**.",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "title": "MarkdownWidget 4x2",
+          "type": "markdown",
+          "data": "## Markdown\nFor the **win**.",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "title": "MarkdownWidget 2x1",
+          "type": "markdown",
+          "data": "## Markdown\nFor the **win**.",
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "title": "MarkdownWidget 4x4",
+          "type": "markdown",
+          "data": "## Markdown\nFor the **win**.",
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "title": "MarkdownWidget 6x4",
+          "type": "markdown",
+          "data": "## Markdown\nFor the **win**.",
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "title": "MarkdownWidget 8x4",
+          "type": "markdown",
+          "data": "## Markdown\nFor the **win**.",
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "title": "MarkdownWidget 6x6",
+          "type": "markdown",
+          "data": "## Markdown\nFor the **win**.",
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "title": "MarkdownWidget 8x6",
+          "type": "markdown",
+          "data": "## Markdown\nFor the **win**.",
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "MarkdownWidget Sizes (no titles, simple)",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "type": "markdown",
+          "data": "## Markdown\nFor the **win**.",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "type": "markdown",
+          "data": "## Markdown\nFor the **win**.",
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "type": "markdown",
+          "data": "## Markdown\nFor the **win**.",
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "type": "markdown",
+          "data": "## Markdown\nFor the **win**.",
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "type": "markdown",
+          "data": "## Markdown\nFor the **win**.",
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "type": "markdown",
+          "data": "## Markdown\nFor the **win**.",
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "type": "markdown",
+          "data": "## Markdown\nFor the **win**.",
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "type": "markdown",
+          "data": "## Markdown\nFor the **win**.",
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "ChartJSWidget Sizes (with titles, Radar)",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "title": "ChartJSWidget 2x2",
+          "type": "chartjs",
+          "data": {
+            "type": "Radar",
+            "data": {
+              "labels": [
+                "Eating",
+                "Drinking",
+                "Sleeping",
+                "Designing",
+                "Coding",
+                "Cycling",
+                "Running"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.2)",
+                  "strokeColor": "rgba(220,220,220,1)",
+                  "pointColor": "rgba(220,220,220,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    90,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.2)",
+                  "strokeColor": "rgba(151,187,205,1)",
+                  "pointColor": "rgba(151,187,205,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    96,
+                    27,
+                    100
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "title": "ChartJSWidget 4x2",
+          "type": "chartjs",
+          "data": {
+            "type": "Radar",
+            "data": {
+              "labels": [
+                "Eating",
+                "Drinking",
+                "Sleeping",
+                "Designing",
+                "Coding",
+                "Cycling",
+                "Running"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.2)",
+                  "strokeColor": "rgba(220,220,220,1)",
+                  "pointColor": "rgba(220,220,220,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    90,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.2)",
+                  "strokeColor": "rgba(151,187,205,1)",
+                  "pointColor": "rgba(151,187,205,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    96,
+                    27,
+                    100
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "title": "ChartJSWidget 2x1",
+          "type": "chartjs",
+          "data": {
+            "type": "Radar",
+            "data": {
+              "labels": [
+                "Eating",
+                "Drinking",
+                "Sleeping",
+                "Designing",
+                "Coding",
+                "Cycling",
+                "Running"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.2)",
+                  "strokeColor": "rgba(220,220,220,1)",
+                  "pointColor": "rgba(220,220,220,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    90,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.2)",
+                  "strokeColor": "rgba(151,187,205,1)",
+                  "pointColor": "rgba(151,187,205,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    96,
+                    27,
+                    100
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "title": "ChartJSWidget 4x4",
+          "type": "chartjs",
+          "data": {
+            "type": "Radar",
+            "data": {
+              "labels": [
+                "Eating",
+                "Drinking",
+                "Sleeping",
+                "Designing",
+                "Coding",
+                "Cycling",
+                "Running"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.2)",
+                  "strokeColor": "rgba(220,220,220,1)",
+                  "pointColor": "rgba(220,220,220,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    90,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.2)",
+                  "strokeColor": "rgba(151,187,205,1)",
+                  "pointColor": "rgba(151,187,205,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    96,
+                    27,
+                    100
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "title": "ChartJSWidget 6x4",
+          "type": "chartjs",
+          "data": {
+            "type": "Radar",
+            "data": {
+              "labels": [
+                "Eating",
+                "Drinking",
+                "Sleeping",
+                "Designing",
+                "Coding",
+                "Cycling",
+                "Running"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.2)",
+                  "strokeColor": "rgba(220,220,220,1)",
+                  "pointColor": "rgba(220,220,220,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    90,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.2)",
+                  "strokeColor": "rgba(151,187,205,1)",
+                  "pointColor": "rgba(151,187,205,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    96,
+                    27,
+                    100
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "title": "ChartJSWidget 8x4",
+          "type": "chartjs",
+          "data": {
+            "type": "Radar",
+            "data": {
+              "labels": [
+                "Eating",
+                "Drinking",
+                "Sleeping",
+                "Designing",
+                "Coding",
+                "Cycling",
+                "Running"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.2)",
+                  "strokeColor": "rgba(220,220,220,1)",
+                  "pointColor": "rgba(220,220,220,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    90,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.2)",
+                  "strokeColor": "rgba(151,187,205,1)",
+                  "pointColor": "rgba(151,187,205,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    96,
+                    27,
+                    100
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "title": "ChartJSWidget 6x6",
+          "type": "chartjs",
+          "data": {
+            "type": "Radar",
+            "data": {
+              "labels": [
+                "Eating",
+                "Drinking",
+                "Sleeping",
+                "Designing",
+                "Coding",
+                "Cycling",
+                "Running"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.2)",
+                  "strokeColor": "rgba(220,220,220,1)",
+                  "pointColor": "rgba(220,220,220,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    90,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.2)",
+                  "strokeColor": "rgba(151,187,205,1)",
+                  "pointColor": "rgba(151,187,205,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    96,
+                    27,
+                    100
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "title": "ChartJSWidget 8x6",
+          "type": "chartjs",
+          "data": {
+            "type": "Radar",
+            "data": {
+              "labels": [
+                "Eating",
+                "Drinking",
+                "Sleeping",
+                "Designing",
+                "Coding",
+                "Cycling",
+                "Running"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.2)",
+                  "strokeColor": "rgba(220,220,220,1)",
+                  "pointColor": "rgba(220,220,220,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    90,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.2)",
+                  "strokeColor": "rgba(151,187,205,1)",
+                  "pointColor": "rgba(151,187,205,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    96,
+                    27,
+                    100
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "ChartJSWidget Sizes (with titles, PolarArea)",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "title": "ChartJSWidget 2x2",
+          "type": "chartjs",
+          "data": {
+            "type": "PolarArea",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              },
+              {
+                "value": 40,
+                "color": "#949FB1",
+                "highlight": "#A8B3C5",
+                "label": "Grey"
+              },
+              {
+                "value": 120,
+                "color": "#4D5360",
+                "highlight": "#616774",
+                "label": "Dark Grey"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "title": "ChartJSWidget 4x2",
+          "type": "chartjs",
+          "data": {
+            "type": "PolarArea",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              },
+              {
+                "value": 40,
+                "color": "#949FB1",
+                "highlight": "#A8B3C5",
+                "label": "Grey"
+              },
+              {
+                "value": 120,
+                "color": "#4D5360",
+                "highlight": "#616774",
+                "label": "Dark Grey"
+              }
+            ]
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "title": "ChartJSWidget 2x1",
+          "type": "chartjs",
+          "data": {
+            "type": "PolarArea",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              },
+              {
+                "value": 40,
+                "color": "#949FB1",
+                "highlight": "#A8B3C5",
+                "label": "Grey"
+              },
+              {
+                "value": 120,
+                "color": "#4D5360",
+                "highlight": "#616774",
+                "label": "Dark Grey"
+              }
+            ]
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "title": "ChartJSWidget 4x4",
+          "type": "chartjs",
+          "data": {
+            "type": "PolarArea",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              },
+              {
+                "value": 40,
+                "color": "#949FB1",
+                "highlight": "#A8B3C5",
+                "label": "Grey"
+              },
+              {
+                "value": 120,
+                "color": "#4D5360",
+                "highlight": "#616774",
+                "label": "Dark Grey"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "title": "ChartJSWidget 6x4",
+          "type": "chartjs",
+          "data": {
+            "type": "PolarArea",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              },
+              {
+                "value": 40,
+                "color": "#949FB1",
+                "highlight": "#A8B3C5",
+                "label": "Grey"
+              },
+              {
+                "value": 120,
+                "color": "#4D5360",
+                "highlight": "#616774",
+                "label": "Dark Grey"
+              }
+            ]
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "title": "ChartJSWidget 8x4",
+          "type": "chartjs",
+          "data": {
+            "type": "PolarArea",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              },
+              {
+                "value": 40,
+                "color": "#949FB1",
+                "highlight": "#A8B3C5",
+                "label": "Grey"
+              },
+              {
+                "value": 120,
+                "color": "#4D5360",
+                "highlight": "#616774",
+                "label": "Dark Grey"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "title": "ChartJSWidget 6x6",
+          "type": "chartjs",
+          "data": {
+            "type": "PolarArea",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              },
+              {
+                "value": 40,
+                "color": "#949FB1",
+                "highlight": "#A8B3C5",
+                "label": "Grey"
+              },
+              {
+                "value": 120,
+                "color": "#4D5360",
+                "highlight": "#616774",
+                "label": "Dark Grey"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "title": "ChartJSWidget 8x6",
+          "type": "chartjs",
+          "data": {
+            "type": "PolarArea",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              },
+              {
+                "value": 40,
+                "color": "#949FB1",
+                "highlight": "#A8B3C5",
+                "label": "Grey"
+              },
+              {
+                "value": 120,
+                "color": "#4D5360",
+                "highlight": "#616774",
+                "label": "Dark Grey"
+              }
+            ]
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "ChartJSWidget Sizes (with titles, Pie)",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "title": "ChartJSWidget 2x2",
+          "type": "chartjs",
+          "data": {
+            "type": "Pie",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "title": "ChartJSWidget 4x2",
+          "type": "chartjs",
+          "data": {
+            "type": "Pie",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "title": "ChartJSWidget 2x1",
+          "type": "chartjs",
+          "data": {
+            "type": "Pie",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "title": "ChartJSWidget 4x4",
+          "type": "chartjs",
+          "data": {
+            "type": "Pie",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "title": "ChartJSWidget 6x4",
+          "type": "chartjs",
+          "data": {
+            "type": "Pie",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "title": "ChartJSWidget 8x4",
+          "type": "chartjs",
+          "data": {
+            "type": "Pie",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "title": "ChartJSWidget 6x6",
+          "type": "chartjs",
+          "data": {
+            "type": "Pie",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "title": "ChartJSWidget 8x6",
+          "type": "chartjs",
+          "data": {
+            "type": "Pie",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "ChartJSWidget Sizes (with titles, Line)",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "title": "ChartJSWidget 2x2",
+          "type": "chartjs",
+          "data": {
+            "type": "Line",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "title": "ChartJSWidget 4x2",
+          "type": "chartjs",
+          "data": {
+            "type": "Line",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "title": "ChartJSWidget 2x1",
+          "type": "chartjs",
+          "data": {
+            "type": "Line",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "title": "ChartJSWidget 4x4",
+          "type": "chartjs",
+          "data": {
+            "type": "Line",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "title": "ChartJSWidget 6x4",
+          "type": "chartjs",
+          "data": {
+            "type": "Line",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "title": "ChartJSWidget 8x4",
+          "type": "chartjs",
+          "data": {
+            "type": "Line",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "title": "ChartJSWidget 6x6",
+          "type": "chartjs",
+          "data": {
+            "type": "Line",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "title": "ChartJSWidget 8x6",
+          "type": "chartjs",
+          "data": {
+            "type": "Line",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "ChartJSWidget Sizes (with titles, Doughnut)",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "title": "ChartJSWidget 2x2",
+          "type": "chartjs",
+          "data": {
+            "type": "Doughnut",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "title": "ChartJSWidget 4x2",
+          "type": "chartjs",
+          "data": {
+            "type": "Doughnut",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "title": "ChartJSWidget 2x1",
+          "type": "chartjs",
+          "data": {
+            "type": "Doughnut",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "title": "ChartJSWidget 4x4",
+          "type": "chartjs",
+          "data": {
+            "type": "Doughnut",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "title": "ChartJSWidget 6x4",
+          "type": "chartjs",
+          "data": {
+            "type": "Doughnut",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "title": "ChartJSWidget 8x4",
+          "type": "chartjs",
+          "data": {
+            "type": "Doughnut",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "title": "ChartJSWidget 6x6",
+          "type": "chartjs",
+          "data": {
+            "type": "Doughnut",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "title": "ChartJSWidget 8x6",
+          "type": "chartjs",
+          "data": {
+            "type": "Doughnut",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "ChartJSWidget Sizes (with titles, Bar)",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "title": "ChartJSWidget 2x2",
+          "type": "chartjs",
+          "data": {
+            "type": "Bar",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "title": "ChartJSWidget 4x2",
+          "type": "chartjs",
+          "data": {
+            "type": "Bar",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "title": "ChartJSWidget 2x1",
+          "type": "chartjs",
+          "data": {
+            "type": "Bar",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "title": "ChartJSWidget 4x4",
+          "type": "chartjs",
+          "data": {
+            "type": "Bar",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "title": "ChartJSWidget 6x4",
+          "type": "chartjs",
+          "data": {
+            "type": "Bar",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "title": "ChartJSWidget 8x4",
+          "type": "chartjs",
+          "data": {
+            "type": "Bar",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "title": "ChartJSWidget 6x6",
+          "type": "chartjs",
+          "data": {
+            "type": "Bar",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "title": "ChartJSWidget 8x6",
+          "type": "chartjs",
+          "data": {
+            "type": "Bar",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "ChartJSWidget Sizes (no titles, Radar)",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "type": "chartjs",
+          "data": {
+            "type": "Radar",
+            "data": {
+              "labels": [
+                "Eating",
+                "Drinking",
+                "Sleeping",
+                "Designing",
+                "Coding",
+                "Cycling",
+                "Running"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.2)",
+                  "strokeColor": "rgba(220,220,220,1)",
+                  "pointColor": "rgba(220,220,220,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    90,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.2)",
+                  "strokeColor": "rgba(151,187,205,1)",
+                  "pointColor": "rgba(151,187,205,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    96,
+                    27,
+                    100
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "type": "chartjs",
+          "data": {
+            "type": "Radar",
+            "data": {
+              "labels": [
+                "Eating",
+                "Drinking",
+                "Sleeping",
+                "Designing",
+                "Coding",
+                "Cycling",
+                "Running"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.2)",
+                  "strokeColor": "rgba(220,220,220,1)",
+                  "pointColor": "rgba(220,220,220,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    90,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.2)",
+                  "strokeColor": "rgba(151,187,205,1)",
+                  "pointColor": "rgba(151,187,205,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    96,
+                    27,
+                    100
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "type": "chartjs",
+          "data": {
+            "type": "Radar",
+            "data": {
+              "labels": [
+                "Eating",
+                "Drinking",
+                "Sleeping",
+                "Designing",
+                "Coding",
+                "Cycling",
+                "Running"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.2)",
+                  "strokeColor": "rgba(220,220,220,1)",
+                  "pointColor": "rgba(220,220,220,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    90,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.2)",
+                  "strokeColor": "rgba(151,187,205,1)",
+                  "pointColor": "rgba(151,187,205,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    96,
+                    27,
+                    100
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "type": "chartjs",
+          "data": {
+            "type": "Radar",
+            "data": {
+              "labels": [
+                "Eating",
+                "Drinking",
+                "Sleeping",
+                "Designing",
+                "Coding",
+                "Cycling",
+                "Running"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.2)",
+                  "strokeColor": "rgba(220,220,220,1)",
+                  "pointColor": "rgba(220,220,220,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    90,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.2)",
+                  "strokeColor": "rgba(151,187,205,1)",
+                  "pointColor": "rgba(151,187,205,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    96,
+                    27,
+                    100
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "type": "chartjs",
+          "data": {
+            "type": "Radar",
+            "data": {
+              "labels": [
+                "Eating",
+                "Drinking",
+                "Sleeping",
+                "Designing",
+                "Coding",
+                "Cycling",
+                "Running"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.2)",
+                  "strokeColor": "rgba(220,220,220,1)",
+                  "pointColor": "rgba(220,220,220,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    90,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.2)",
+                  "strokeColor": "rgba(151,187,205,1)",
+                  "pointColor": "rgba(151,187,205,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    96,
+                    27,
+                    100
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "type": "chartjs",
+          "data": {
+            "type": "Radar",
+            "data": {
+              "labels": [
+                "Eating",
+                "Drinking",
+                "Sleeping",
+                "Designing",
+                "Coding",
+                "Cycling",
+                "Running"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.2)",
+                  "strokeColor": "rgba(220,220,220,1)",
+                  "pointColor": "rgba(220,220,220,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    90,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.2)",
+                  "strokeColor": "rgba(151,187,205,1)",
+                  "pointColor": "rgba(151,187,205,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    96,
+                    27,
+                    100
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "type": "chartjs",
+          "data": {
+            "type": "Radar",
+            "data": {
+              "labels": [
+                "Eating",
+                "Drinking",
+                "Sleeping",
+                "Designing",
+                "Coding",
+                "Cycling",
+                "Running"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.2)",
+                  "strokeColor": "rgba(220,220,220,1)",
+                  "pointColor": "rgba(220,220,220,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    90,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.2)",
+                  "strokeColor": "rgba(151,187,205,1)",
+                  "pointColor": "rgba(151,187,205,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    96,
+                    27,
+                    100
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "type": "chartjs",
+          "data": {
+            "type": "Radar",
+            "data": {
+              "labels": [
+                "Eating",
+                "Drinking",
+                "Sleeping",
+                "Designing",
+                "Coding",
+                "Cycling",
+                "Running"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.2)",
+                  "strokeColor": "rgba(220,220,220,1)",
+                  "pointColor": "rgba(220,220,220,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    90,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.2)",
+                  "strokeColor": "rgba(151,187,205,1)",
+                  "pointColor": "rgba(151,187,205,1)",
+                  "pointStrokeColor": "#fff",
+                  "pointHighlightFill": "#fff",
+                  "pointHighlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    96,
+                    27,
+                    100
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "ChartJSWidget Sizes (no titles, PolarArea)",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "type": "chartjs",
+          "data": {
+            "type": "PolarArea",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              },
+              {
+                "value": 40,
+                "color": "#949FB1",
+                "highlight": "#A8B3C5",
+                "label": "Grey"
+              },
+              {
+                "value": 120,
+                "color": "#4D5360",
+                "highlight": "#616774",
+                "label": "Dark Grey"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "type": "chartjs",
+          "data": {
+            "type": "PolarArea",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              },
+              {
+                "value": 40,
+                "color": "#949FB1",
+                "highlight": "#A8B3C5",
+                "label": "Grey"
+              },
+              {
+                "value": 120,
+                "color": "#4D5360",
+                "highlight": "#616774",
+                "label": "Dark Grey"
+              }
+            ]
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "type": "chartjs",
+          "data": {
+            "type": "PolarArea",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              },
+              {
+                "value": 40,
+                "color": "#949FB1",
+                "highlight": "#A8B3C5",
+                "label": "Grey"
+              },
+              {
+                "value": 120,
+                "color": "#4D5360",
+                "highlight": "#616774",
+                "label": "Dark Grey"
+              }
+            ]
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "type": "chartjs",
+          "data": {
+            "type": "PolarArea",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              },
+              {
+                "value": 40,
+                "color": "#949FB1",
+                "highlight": "#A8B3C5",
+                "label": "Grey"
+              },
+              {
+                "value": 120,
+                "color": "#4D5360",
+                "highlight": "#616774",
+                "label": "Dark Grey"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "type": "chartjs",
+          "data": {
+            "type": "PolarArea",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              },
+              {
+                "value": 40,
+                "color": "#949FB1",
+                "highlight": "#A8B3C5",
+                "label": "Grey"
+              },
+              {
+                "value": 120,
+                "color": "#4D5360",
+                "highlight": "#616774",
+                "label": "Dark Grey"
+              }
+            ]
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "type": "chartjs",
+          "data": {
+            "type": "PolarArea",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              },
+              {
+                "value": 40,
+                "color": "#949FB1",
+                "highlight": "#A8B3C5",
+                "label": "Grey"
+              },
+              {
+                "value": 120,
+                "color": "#4D5360",
+                "highlight": "#616774",
+                "label": "Dark Grey"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "type": "chartjs",
+          "data": {
+            "type": "PolarArea",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              },
+              {
+                "value": 40,
+                "color": "#949FB1",
+                "highlight": "#A8B3C5",
+                "label": "Grey"
+              },
+              {
+                "value": 120,
+                "color": "#4D5360",
+                "highlight": "#616774",
+                "label": "Dark Grey"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "type": "chartjs",
+          "data": {
+            "type": "PolarArea",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              },
+              {
+                "value": 40,
+                "color": "#949FB1",
+                "highlight": "#A8B3C5",
+                "label": "Grey"
+              },
+              {
+                "value": 120,
+                "color": "#4D5360",
+                "highlight": "#616774",
+                "label": "Dark Grey"
+              }
+            ]
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "ChartJSWidget Sizes (no titles, Pie)",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "type": "chartjs",
+          "data": {
+            "type": "Pie",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "type": "chartjs",
+          "data": {
+            "type": "Pie",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "type": "chartjs",
+          "data": {
+            "type": "Pie",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "type": "chartjs",
+          "data": {
+            "type": "Pie",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "type": "chartjs",
+          "data": {
+            "type": "Pie",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "type": "chartjs",
+          "data": {
+            "type": "Pie",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "type": "chartjs",
+          "data": {
+            "type": "Pie",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "type": "chartjs",
+          "data": {
+            "type": "Pie",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "ChartJSWidget Sizes (no titles, Line)",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "type": "chartjs",
+          "data": {
+            "type": "Line",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "type": "chartjs",
+          "data": {
+            "type": "Line",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "type": "chartjs",
+          "data": {
+            "type": "Line",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "type": "chartjs",
+          "data": {
+            "type": "Line",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "type": "chartjs",
+          "data": {
+            "type": "Line",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "type": "chartjs",
+          "data": {
+            "type": "Line",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "type": "chartjs",
+          "data": {
+            "type": "Line",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "type": "chartjs",
+          "data": {
+            "type": "Line",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "ChartJSWidget Sizes (no titles, Doughnut)",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "type": "chartjs",
+          "data": {
+            "type": "Doughnut",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "type": "chartjs",
+          "data": {
+            "type": "Doughnut",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "type": "chartjs",
+          "data": {
+            "type": "Doughnut",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "type": "chartjs",
+          "data": {
+            "type": "Doughnut",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "type": "chartjs",
+          "data": {
+            "type": "Doughnut",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "type": "chartjs",
+          "data": {
+            "type": "Doughnut",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "type": "chartjs",
+          "data": {
+            "type": "Doughnut",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "type": "chartjs",
+          "data": {
+            "type": "Doughnut",
+            "data": [
+              {
+                "value": 300,
+                "color": "#F7464A",
+                "highlight": "#FF5A5E",
+                "label": "Red"
+              },
+              {
+                "value": 50,
+                "color": "#46BFBD",
+                "highlight": "#5AD3D1",
+                "label": "Green"
+              },
+              {
+                "value": 100,
+                "color": "#FDB45C",
+                "highlight": "#FFC870",
+                "label": "Yellow"
+              }
+            ]
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    },
+    {
+      "title": "ChartJSWidget Sizes (no titles, Bar)",
+      "panels": [
+        {
+          "w": 2,
+          "h": 2,
+          "type": "chartjs",
+          "data": {
+            "type": "Bar",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 2,
+          "type": "chartjs",
+          "data": {
+            "type": "Bar",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 2,
+          "y": 0
+        },
+        {
+          "w": 2,
+          "h": 1,
+          "type": "chartjs",
+          "data": {
+            "type": "Bar",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 6,
+          "y": 0
+        },
+        {
+          "w": 4,
+          "h": 4,
+          "type": "chartjs",
+          "data": {
+            "type": "Bar",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 2
+        },
+        {
+          "w": 6,
+          "h": 4,
+          "type": "chartjs",
+          "data": {
+            "type": "Bar",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 4,
+          "y": 2
+        },
+        {
+          "w": 8,
+          "h": 4,
+          "type": "chartjs",
+          "data": {
+            "type": "Bar",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 6
+        },
+        {
+          "w": 6,
+          "h": 6,
+          "type": "chartjs",
+          "data": {
+            "type": "Bar",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 0,
+          "y": 10
+        },
+        {
+          "w": 8,
+          "h": 6,
+          "type": "chartjs",
+          "data": {
+            "type": "Bar",
+            "data": {
+              "labels": [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July"
+              ],
+              "datasets": [
+                {
+                  "label": "My First dataset",
+                  "fillColor": "rgba(220,220,220,0.5)",
+                  "strokeColor": "rgba(220,220,220,0.8)",
+                  "highlightFill": "rgba(220,220,220,0.75)",
+                  "highlightStroke": "rgba(220,220,220,1)",
+                  "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                  ]
+                },
+                {
+                  "label": "My Second dataset",
+                  "fillColor": "rgba(151,187,205,0.5)",
+                  "strokeColor": "rgba(151,187,205,0.8)",
+                  "highlightFill": "rgba(151,187,205,0.75)",
+                  "highlightStroke": "rgba(151,187,205,1)",
+                  "data": [
+                    28,
+                    48,
+                    40,
+                    19,
+                    86,
+                    27,
+                    90
+                  ]
+                }
+              ]
+            }
+          },
+          "x": 6,
+          "y": 10
+        }
+      ]
+    }
+  ]
 }
