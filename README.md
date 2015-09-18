@@ -2,13 +2,14 @@
 
 Like Geckoboard but with <del>less</del> *different* features.
 
-## Widgets
+## widgets
 
- - Text / Markdown
- - Value / Value plus second stat/text
+ - Text
+ - Markdown
+ - Value (optional secondary stat/text)
  - ChartJS chart
 
-@todo
+not implemented yet
 
  - Funnel
  - Gauge

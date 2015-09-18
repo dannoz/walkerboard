@@ -13,6 +13,11 @@ var webpackConfig = {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract("css!sass?outputStyle=compact", { allChunks: true })
             },
+            {   //don't include *.demo.js files...
+                test: /\.demo\.js$/,
+                exlude: /node_modules/,
+                loader: "null"
+            },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
@@ -31,7 +36,7 @@ var webpackConfig = {
             "process.env": Object.keys(process.env).reduce(function(env, key) {
                 env[key] = JSON.stringify(process.env[key]);
                 return env;
-            }, {})
+            }, { BROWSER: "true" })
         })
     ]
 };

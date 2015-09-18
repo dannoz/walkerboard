@@ -34,14 +34,16 @@ export default React.createClass({
                 error: () => ({ index: index, title: <span className="text-danger"><span className="glyphicon glyphicon-exclamation-sign" />{` Failed to load board ${index + 1}`}</span> })
             }));
 
-        //remove the current from the list of all
-        const currentDashboard = allDashboards.splice(this.props.current, 1)[0];
+        //get a ref to the current
+        const currentDashboard = allDashboards[this.props.current];
 
-        //others is this list filtered for loading items.
+        //others is this list filtered for loading items, but including the current one.
+        //this is because the list the remains static once loaded. so positions don't change
+        //which could confuse the user.
         const otherDashboards = allDashboards.filter(data => data);
 
         let currentTitleAndOtherDropdown;
-        if (otherDashboards.length) {
+        if (otherDashboards.length > 1) {
             currentTitleAndOtherDropdown = <li style={{ marginRight: 8 }}className={cx({ "btn-group": true, "open": this.state.dropdownOpen })}>
                 <button className="btn btn-link navbar-btn dropdown-toggle" onClick={this.toggleDropdown} role="button" aria-haspopup="true" aria-expanded="true">
                     {currentDashboard.title}
@@ -88,5 +90,14 @@ export default React.createClass({
                 </ul>
             </div>
         </div>;
+    },
+    componentDidMount() {
+        this.updateWindowTitle(this.props.branding.text);
+    },
+    componentWillUnmount() {
+        this.updateWindowTitle("WalkerBoard");
+    },
+    updateWindowTitle(text) {
+        window.document.title = text;
     }
 });

@@ -15,7 +15,6 @@ export const fetchJSONIfPossible = function(fetch, url, { timeout = 30 } = {}) {
         }),
         //this is the actual request
         fetch(url)
-            .then(wait(1e3)) //artifical delay... for testing
             .then(response => {
                 //get the text here so we have it even in an error situation.
                 return response.text()

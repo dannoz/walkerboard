@@ -10,3 +10,8 @@ $cellGutter: 10px;
 //each widget is then padded and had a fixed size header
 $widgetPadding: 8px;
 $widgetHeaderSize: 40px;
+
+//how big can panels get?
+$maxUnitsWide: 12;
+$maxUnitsTall: 12;
+$maxDashboardSize: 100;

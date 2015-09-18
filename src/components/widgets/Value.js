@@ -52,7 +52,8 @@ export default React.createClass({
             <div className={cx(mainClass)}>{formatNumber(data.value)}</div>
             {secondary}
         </div>;
-    }
+    },
+    statics: require("./Value.demo")
 });
 
 function trimRightZeroes(s) {

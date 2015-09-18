@@ -11,5 +11,10 @@ export default React.createClass({
             data = data.text;
         }
         return <div>{"" + data}</div>;
+    },
+    statics: {
+        getDemoData() {
+            return [ [ "text", "hello world!" ] ];
+        }
     }
 });

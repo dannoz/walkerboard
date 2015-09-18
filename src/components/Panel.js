@@ -24,14 +24,14 @@ export default React.createClass({
         });
 
         return <div className={panelClass}>
-            {def.title && <div className="widget-heading panel-heading">def.title</div>}
-            <div className="widget-body">
+            {def.title && <div className="widget-heading panel-heading">{def.title}</div>}
+            <div className="widget-body-container"><div className="widget-body">
                 {this.props.data.when({ //@TODO: save the last good data as always display that, overlaying any loading/error
                     pending: () => <Loading />,
                     error: err => <PanelError error={err} />,
                     ok: data => <Widget data={data} size={def.innerSize} />
                 })}
-            </div>
+            </div></div>
             {def.url && <div className="widget-refresh widget-refresh-loading" onClick={this.props.onRefresh}><span className={cx({ glyphicon: true, "glyphicon-refresh": true, "widget-rotate": this.props.data.when({ pending: () => true }) })} /></div>}
         </div>;
     },

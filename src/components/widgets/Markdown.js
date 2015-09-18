@@ -11,6 +11,7 @@ export default React.createClass({
         if (typeof data === "object" && "markdown" in data) {
             data = data.markdown;
         }
-        return <div dangerouslySetInnerHTML={{ __html: marked(data) }}/>;
-    }
+        return <div className="container-fluid" dangerouslySetInnerHTML={{ __html: marked(data) }}/>;
+    },
+    statics: require("./Markdown.demo")
 });

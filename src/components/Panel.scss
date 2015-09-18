@@ -9,29 +9,41 @@
     top: 0;
     left: 0;
 }
+
 .panel {
     padding: 0;
 }
-.widget-body {
+
+//make this element like a "table" for vertical centering
+.widget-body-container {
     padding: 0;
     margin: $widgetPadding;
     position: relative;
+    display: table;
+}
+.widget-body {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0;
 }
 
-@for $i from 1 through 20 {
+@for $i from 1 through $maxDashboardSize {
   .widget-x-#{$i} { left: ($cellWidth + $cellGutter) * $i; }
   .widget-y-#{$i} { top: ($cellHeight + $cellGutter) * $i; }
 }
 
-@for $i from 1 through 20 {
+@for $i from 1 through $maxUnitsWide {
     $width: ($cellWidth + $cellGutter) * $i - $cellGutter;
-    $height: ($cellHeight + $cellGutter) * $i - $cellGutter;
     .widget-w-#{$i} {
         width: $width;
         .widget-body {
             width: $width - $widgetPadding * 2;
         }
     }
+}
+
+@for $i from 1 through $maxUnitsTall {
+    $height: ($cellHeight + $cellGutter) * $i - $cellGutter;
     .widget-h-#{$i} {
         height: $height;
         .widget-body {
@@ -46,6 +58,7 @@
 }
 
 .widget-heading {
+    display: block;
     text-transform: uppercase;
     height: $widgetHeaderSize;
 }

@@ -1,5 +1,4 @@
-//webpack require for this special loader...
-const sassVariables = require("!sass-variables!../style/base.scss");
+import sassVariables from "./load-sass-variables";
 
 const vars = Object.keys(sassVariables).reduce((acc, key) => {
     const int = parseInt(sassVariables[key], 10);
@@ -58,9 +57,8 @@ export function getDashboardSize(panels) {
     }
     return {
         width: size.x2 - size.x1,
-        height: size.y2 - size.y1
+        height: size.y2 //- size.y1 //height is always from 0
     };
 }
-
 
 export default vars;
