@@ -8,6 +8,7 @@
       "panels": [
         {
           "type": "markdown",
+          "title": "/README.md",
           "data": "# WalkerBoard\n\nLike Geckoboard but with <del>less</del> *different* features.\n\n## widgets\n\n - Text\n - Markdown\n - Value (optional secondary stat/text)\n - ChartJS chart\n\nnot implemented yet\n\n - Funnel\n - Gauge\n - HighChart (? I had this in the old version...)\n\n## getting started\n\nTo try it out go to `https://thechriswalker.github.io/walkerboard`.\n\nYou can load a specific `board.json` by passing the url to it in the query string (yay, CORS).\n\nTo create your own `board.json`, check out the sample one and see how it works.\n\n## development\n\n`git clone` and `npm install` and `npm run dev` and open `http://localhost:8080/dev.html`\n",
           "x": 0,
           "y": 0,

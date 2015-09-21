@@ -30,6 +30,7 @@ var webpackConfig = {
         ]
     },
     plugins: [
+        new webpack.optimize.UglifyJsPlugin(),
         // extract inline css into separate file
         new ExtractTextPlugin("walkerboard.css"),
         new webpack.DefinePlugin({
@@ -50,6 +51,8 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
     webpackConfig.module.postLoaders.push({ test: /components\/(widgets\/|)[^\/]+\.js$/, exclude: /node_modules/, loader: "react-hot" });
     //overwrite with the sourcemap generating one with HMR
     webpackConfig.module.loaders[0].loader = "style!css?sourceMap!sass?outputStyle=expanded&sourceMap";
+    //remove the uglify plugin
+    webpackConfig.plugins.shift();
 }
 
 

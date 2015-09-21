@@ -86,6 +86,7 @@ output.boards.unshift({
     panels: [
         {
             type: "markdown",
+            title: "/README.md",
             data: require("fs").readFileSync("./README.md", "utf8"),
             x: 0, y: 0,
             w: 4, h: 6
