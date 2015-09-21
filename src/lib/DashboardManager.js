@@ -4,7 +4,7 @@
 import Dashboard from "./Dashboard";
 import Maybe from "./Maybe";
 import { fetchJSONIfPossible, error } from "./util";
-import { replaceQuery } from "./querystring";
+import { setQuery } from "./querystring";
 
 const $notify = Symbol("notify");
 const $callbacks = Symbol("callbacks");
@@ -75,7 +75,7 @@ export default class DashboardManager {
                     boards[this.currentBoard].pause();
                     this.currentBoard = index;
                     boards[this.currentBoard].resume();
-                    replaceQuery({ board: this.url, tab: this.currentBoard });
+                    setQuery({ board: this.url, tab: this.currentBoard });
                     this[$notify]();
                 }
             }

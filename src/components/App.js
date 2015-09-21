@@ -36,7 +36,7 @@ export default React.createClass({
                     //now we are rendering a single board from the many.
                     const onRefreshPanelData = index => this.props.dash.refreshPanelData(index);
                     return <div>
-                        <Header branding={this.props.dash.branding} boards={boards} current={this.state.dash.current} onChangeBoard={index => this.changeDashboard(index)} onOpenModal={this.openModal} />
+                        <Header boardURL={this.props.dash.url} branding={this.props.dash.branding} boards={boards} current={this.state.dash.current} onChangeBoard={index => this.changeDashboard(index)} onOpenModal={this.openModal} />
                         {this.renderPanels(this.state.dash.board, this.state.dash.panels, onRefreshPanelData)}
                     </div>;
                 }

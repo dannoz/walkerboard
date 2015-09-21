@@ -2,10 +2,12 @@ import React from "react";
 import Dashboard from "../lib/Dashboard";
 import Credit from "./Credit";
 import cx from "classnames";
+import { makeURL } from "../lib/querystring";
 
 export default React.createClass({
     displayName: "Header",
     propTypes: {
+        boardURL: React.PropTypes.string.isRequired,
         branding: React.PropTypes.object.isRequired,
         boards: React.PropTypes.arrayOf(React.PropTypes.instanceOf(Dashboard)).isRequired,
         current: React.PropTypes.number.isRequired,
@@ -53,7 +55,7 @@ export default React.createClass({
                 </button>
                 <ul className="dropdown-menu" style={{ marginTop: -10 }}>
                     {otherDashboards.map(data => <li key={`dash-${data.index}`}>
-                        <a href="#" onClick={() => this.props.onChangeBoard(data.index)}>{data.title}</a>
+                        <a href={makeURL({ board: this.props.boardURL, tab: data.index })} onClick={this.onChangeBoard.bind(this, data.index)}>{data.title}</a>
                     </li>)}
                 </ul>
             </li>;
@@ -100,5 +102,9 @@ export default React.createClass({
     },
     updateWindowTitle(text) {
         window.document.title = text;
+    },
+    onChangeBoard(index, ev) {
+        ev.preventDefault();
+        this.props.onChangeBoard(index);
     }
 });
