@@ -4,33 +4,49 @@
 import Dashboard from "./Dashboard";
 import Maybe from "./Maybe";
 import { fetchJSONIfPossible, error } from "./util";
+import { replaceQuery } from "./querystring";
 
 const $notify = Symbol("notify");
 const $callbacks = Symbol("callbacks");
+const $state = Symbol("state");
 
 export default class DashboardManager {
-    constructor(url, { fetch } = {}) {
-        this.url = url;
+    constructor({ board, tab = 0 } = {}, { fetch } = {}) {
+        this.url = board;
         this.branding = {
             logo: false,
             text: "WalkerBoard",
             url: "https://github.com/thechriswalker/walkerboard"
         };
         this.boards = Maybe(); //pending initially
-        this.currentBoard = 0;
+        this.currentBoard = tab;
         this.fetch = fetch; //the http request library
         this[$callbacks] = [];
-
         //notify callbacks.
+        //this is here so state updates only happen on notify
+        const getState = () => ({
+            boards: this.boards,
+            current: this.currentBoard,
+            board: this.boards.when({
+                ok: boards => boards[this.currentBoard].boardData
+            }),
+            panels: this.boards.when({
+                ok: boards => boards[this.currentBoard].panelData
+            })
+        });
+        //load initial state.
+        this[$state] = getState();
+
+
         //but only once an event loop.
         let notifyInProgress = false;
         this[$notify] = () => {
             if (!notifyInProgress) {
                 notifyInProgress = true;
                 process.nextTick(() => {
-                    const state = this.getState();
+                    this[$state] = getState();
                     notifyInProgress = false;
-                    this[$callbacks].map(fn => fn(state));
+                    this[$callbacks].map(fn => fn(this[$state]));
                 });
             }
         };
@@ -43,16 +59,7 @@ export default class DashboardManager {
     }
 
     getState() {
-        return {
-            boards: this.boards,
-            current: this.currentBoard,
-            board: this.boards.when({
-                ok: boards => boards[this.currentBoard].boardData
-            }),
-            panels: this.boards.when({
-                ok: boards => boards[this.currentBoard].panelData
-            })
-        };
+        return this[$state];
     }
 
     refreshPanelData(index) {
@@ -68,8 +75,7 @@ export default class DashboardManager {
                     boards[this.currentBoard].pause();
                     this.currentBoard = index;
                     boards[this.currentBoard].resume();
-                    console.log(`setting: walkerboard:${this.url}:currentIndex => ${index}`);
-                    window.localStorage.setItem(`walkerboard:${this.url}:currentIndex`, index);
+                    replaceQuery({ board: this.url, tab: this.currentBoard });
                     this[$notify]();
                 }
             }
@@ -110,9 +116,8 @@ function initialiseBoards(manager, obj) {
         return error("No dashboards defined");
     }
     const loaded = obj.boards.map(board => new Dashboard(board, { boardUrl: manager.url, fetch: manager.fetch, notify: () => manager[$notify]() }));
-    const savedIndex = window.localStorage.getItem(`walkerboard:${manager.url}:currentIndex`);
-    if (savedIndex && loaded[savedIndex]) {
-        manager.currentBoard = parseInt(savedIndex, 10);
+    if (!loaded[manager.currentBoard]) {
+        manager.currentBoard = 0;
     }
     loaded[manager.currentBoard].resume();
     return loaded;

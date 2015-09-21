@@ -12,7 +12,7 @@ export default React.createClass({
         return <div className="board-error">
             <h1>Error loading dashboard</h1>
             <h3>trying to load: <code>{this.props.url}</code></h3>
-            <p><button className="btn btn-primary btn-lg">try another url?</button> <button className="btn btn-default btn-lg" onClick={() => window.location.reload()}>reload?</button></p>
+            <p><button onClick={this.props.onOpenModal}className="btn btn-primary btn-lg">try another url?</button> <button className="btn btn-default btn-lg" onClick={() => window.location.reload()}>reload?</button></p>
             {shouldShowError && <pre>{errorToShow}</pre>}
             <p><Credit /></p>
         </div>;

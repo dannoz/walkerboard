@@ -9,7 +9,8 @@ export default React.createClass({
         branding: React.PropTypes.object.isRequired,
         boards: React.PropTypes.arrayOf(React.PropTypes.instanceOf(Dashboard)).isRequired,
         current: React.PropTypes.number.isRequired,
-        onChangeBoard: React.PropTypes.func.isRequired
+        onChangeBoard: React.PropTypes.func.isRequired,
+        onOpenModal: React.PropTypes.func.isRequired
     },
     getInitialState() {
         return { dropdownOpen: false };
@@ -78,7 +79,7 @@ export default React.createClass({
                 <ul className="nav navbar-nav navbar-right">
                     {currentTitleAndOtherDropdown}
                     <li className="btn-group" style={{ marginRight: 8 }}>
-                        <button className="btn btn-primary navbar-btn" title="Open new Dashboard">
+                        <button className="btn btn-primary navbar-btn" title="Open new Dashboard" onClick={this.props.onOpenModal}>
                             <span className="glyphicon glyphicon-folder-open" />
                         </button>
                     </li>

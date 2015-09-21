@@ -4,6 +4,7 @@ import Header from "./Header";
 import Panels from "./Panels";
 import Loading from "./Loading";
 import BoardError from "./BoardError";
+import LoadNewBoardModal from "./LoadNewBoardModal";
 
 //webpack load css
 require("./App.scss");
@@ -15,27 +16,33 @@ export default React.createClass({
         dash: React.PropTypes.instanceOf(DashboardManager).isRequired
     },
     componentDidMount() {
-        this.props.dash.registerCallback(state => this.setState(state));
+        this.props.dash.registerCallback(state => this.setState({ dash: state }));
     },
     getInitialState() {
-        return this.props.dash.getState();
+        return {
+            dash: this.props.dash.getState(),
+            openModal: false
+        };
     },
     render() {
-        return this.state.boards.when({
-            pending: () => <Loading>
-                    <p>Loading WalkerBoard...</p>
-                    <p><code>{this.props.dash.url}</code></p>
-                </Loading>,
-            error: err => <BoardError error={err} url={this.props.dash.url} />,
-            ok: boards => {
-                //now we are rendering a single board from the many.
-                const onRefreshPanelData = index => this.props.dash.refreshPanelData(index);
-                return <div>
-                    <Header branding={this.props.dash.branding} boards={boards} current={this.state.current} onChangeBoard={index => this.changeDashboard(index)} />
-                    {this.renderPanels(this.state.board, this.state.panels, onRefreshPanelData)}
-                </div>;
-            }
-        });
+        return <div>
+            {this.state.dash.boards.when({
+                pending: () => <Loading>
+                        <p>Loading WalkerBoard...</p>
+                        <p><code>{this.props.dash.url}</code></p>
+                    </Loading>,
+                error: err => <BoardError error={err} url={this.props.dash.url} onOpenModal={this.openModal} />,
+                ok: boards => {
+                    //now we are rendering a single board from the many.
+                    const onRefreshPanelData = index => this.props.dash.refreshPanelData(index);
+                    return <div>
+                        <Header branding={this.props.dash.branding} boards={boards} current={this.state.dash.current} onChangeBoard={index => this.changeDashboard(index)} onOpenModal={this.openModal} />
+                        {this.renderPanels(this.state.dash.board, this.state.dash.panels, onRefreshPanelData)}
+                    </div>;
+                }
+            })}
+            <LoadNewBoardModal visible={this.state.openModal} onClose={() => this.setState({ openModal: false })}/>
+        </div>;
     },
     renderPanels(board, panelData, refreshPanelData) {
         return board.when({
@@ -49,8 +56,11 @@ export default React.createClass({
     },
     shouldComponentUpdate(nextProps, nextState) {
         //we can ignore props, they won't change
-        //state has "board" and "panels". Board is a maybe, and panels is an array of maybes.
+        //state.dash has "board" and "panels". Board is a maybe, and panels is an array of maybes.
         //but the panels array is immutable. so we can check easily.
-        return ["boards", "board", "panels"].reduce((somethingHasChanged, key) => somethingHasChanged ? somethingHasChanged : this.state[key] !== nextState[key], false);
+        return this.state.openModal !== nextState.openModal || this.state.dash !== nextState.dash;
+    },
+    openModal() {
+        this.setState({ openModal: true });
     }
 });
