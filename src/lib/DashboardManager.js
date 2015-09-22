@@ -71,7 +71,7 @@ export default class DashboardManager {
     changeDashboard(index) {
         this.boards.when({
             ok: boards => {
-                if (boards[index]) {
+                if (boards[index] && this.currentBoard !== index) {
                     boards[this.currentBoard].pause();
                     this.currentBoard = index;
                     boards[this.currentBoard].resume();

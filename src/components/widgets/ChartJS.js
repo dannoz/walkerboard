@@ -1,11 +1,6 @@
 import React from "react";
 import PanelError from "../PanelError";
 import ChartJs from "react-chartjs";
-import { createClass } from "react-chartjs/lib/core";
-
-require("../../lib/HorizontalBar.js");
-
-ChartJs.HorizontalBar = createClass("HorizontalBar", ["getBarsAtEvent"]);
 
 const defaultOptions = {
     multiTooltipTemplate: "<%= datasetLabel %> - <%= value %>"

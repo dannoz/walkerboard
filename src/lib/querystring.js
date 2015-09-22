@@ -8,7 +8,7 @@ const appKeys = [ "board", "tab" ];
 
 const appKeysOnly = (obj, { isDecode }) => {
     const codec = isDecode ? decodeURIComponent : encodeURIComponent;
-    return appKeys.reduce((acc, key) => {
+    const res = appKeys.reduce((acc, key) => {
         if (key in obj) {
             acc[key] = codec(obj[key]);
         }
@@ -17,6 +17,12 @@ const appKeysOnly = (obj, { isDecode }) => {
         board: "board.json",
         tab: "0"
     });
+    //ensure tab is an integer
+    res.tab = parseInt(res.tab, 10);
+    if (isNaN(res.tab)) {
+        res.tab = 0;
+    }
+    return res;
 };
 
 export function makeURL(obj) {
@@ -38,7 +44,7 @@ export function setQuery(obj) {
     //otherwise just a dashboard tab update if needed
     //string coercion is needed as they could be numbers.
     //parseInt is bad as it might be NaN and NaN !== NaN => true
-    if (!current.tab || !obj.tab || obj.tab.toString() !== current.tab.toString()) {
+    if ("tab" in obj && obj.tab.toString() !== current.tab.toString()) {
         if (!html5HistorySupported) {
             window.location.reload();
         }
