@@ -35,7 +35,7 @@ export function setQuery(obj) {
     //otherwise just a dashboard tab update if needed
     //string coercion is needed as they could be numbers.
     //parseInt is bad as it might be NaN and NaN !== NaN => true
-    if (obj.tab.toString() !== current.tab.toString()) {
+    if (!current.tab || !obj.tab || obj.tab.toString() !== current.tab.toString()) {
         if (!html5HistorySupported) {
             window.location.reload();
         }
