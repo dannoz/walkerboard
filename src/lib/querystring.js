@@ -13,7 +13,10 @@ const appKeysOnly = (obj, { isDecode }) => {
             acc[key] = codec(obj[key]);
         }
         return acc;
-    }, {});
+    }, {
+        board: "board.json",
+        tab: "0"
+    });
 };
 
 export function makeURL(obj) {
