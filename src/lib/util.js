@@ -14,7 +14,7 @@ export const fetchJSONIfPossible = function(fetch, url, { timeout = 30 } = {}) {
             throw new Error(`HTTP Request Timeout`);
         }),
         //this is the actual request
-        fetch(url)
+        fetch(url, { credentials: "same-origin" })
             .then(response => {
                 //get the text here so we have it even in an error situation.
                 return response.text()
